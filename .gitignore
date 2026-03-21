@@ -1,0 +1,17 @@
+# Ignore everything
+*
+
+# Allow README
+!README.md
+
+# Allow .gitignore itself
+!.gitignore
+
+# Allow labs folder and its contents
+!labs/
+!labs/**
+
+# Allow lab_solutions folder (but not all files)
+!lab_solutions/
+!lab_solutions/sol_01_*
+!lab_solutions/sol_02_*
