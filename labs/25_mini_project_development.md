@@ -1,4 +1,4 @@
-# Lab 25 — Mini-progetto: sviluppo e completamento
+# Lab 25 - Mini-progetto: sviluppo e completamento
 
 ## Obiettivo
 
@@ -124,7 +124,7 @@ Completare la pipeline del mini-progetto: analisi completa, salvataggio in Mongo
    [2-3 frasi sulle scoperte principali]
    ```
 
-7. **Salva il notebook** — è il tuo deliverable per la valutazione!
+7. **Salva il notebook** - è il tuo deliverable per la valutazione!
 
 ## Output atteso
 

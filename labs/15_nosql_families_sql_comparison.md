@@ -1,4 +1,4 @@
-# Lab 15 — Famiglie NoSQL e confronto con SQL
+# Lab 15 - Famiglie NoSQL e confronto con SQL
 
 ## Obiettivo
 

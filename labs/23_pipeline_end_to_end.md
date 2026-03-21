@@ -1,4 +1,4 @@
-# Lab 23 — Pipeline end-to-end: CSV → PySpark → MongoDB
+# Lab 23 - Pipeline end-to-end: CSV → PySpark → MongoDB
 
 ## Obiettivo
 
@@ -17,7 +17,7 @@ Costruire una pipeline completa che: carica un CSV, lo pulisce, lo analizza con 
 
 ## Dataset
 
-**superstore_sales.csv** — 9.800 ordini. Pipeline completa dall'inizio alla fine.
+**superstore_sales.csv** - 9.800 ordini. Pipeline completa dall'inizio alla fine.
 
 ---
 
@@ -67,7 +67,7 @@ Costruire una pipeline completa che: carica un CSV, lo pulisce, lo analizza con 
    clean.createOrReplaceTempView("orders")
    ```
 
-5. **Query 1 — Vendite per regione e anno:**
+5. **Query 1 - Vendite per regione e anno:**
 
    ```python
    q1 = spark.sql("""
@@ -84,7 +84,7 @@ Costruire una pipeline completa che: carica un CSV, lo pulisce, lo analizza con 
    q1.show(20)
    ```
 
-6. **Query 2 — Top 5 clienti:**
+6. **Query 2 - Top 5 clienti:**
 
    ```python
    q2 = spark.sql("""
@@ -101,7 +101,7 @@ Costruire una pipeline completa che: carica un CSV, lo pulisce, lo analizza con 
    q2.show()
    ```
 
-7. **Query 3 — Categoria più venduta per regione:**
+7. **Query 3 - Categoria più venduta per regione:**
 
    ```python
    q3 = spark.sql("""

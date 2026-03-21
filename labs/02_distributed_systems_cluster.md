@@ -1,4 +1,4 @@
-# Lab 02 — Sistemi distribuiti: cluster, nodi, parallelismo
+# Lab 02 - Sistemi distribuiti: cluster, nodi, parallelismo
 
 ## Obiettivo
 
@@ -97,7 +97,7 @@ Hai a disposizione un cluster di 5 computer:
 | ----------------------------- | ------------------------------------------------------------------------------------- |
 | Non so disegnare il diagramma | Usa rettangoli e frecce, come nell'esempio sopra                                      |
 | Non capisco la divisione      | Pensa a dividere una pizza: 15 fette tra 4 persone                                    |
-| Non so descrivere il recovery | Il boss controlla i "battiti" (heartbeat) — se non ne riceve, sa che l'helper è morto |
+| Non so descrivere il recovery | Il boss controlla i "battiti" (heartbeat) - se non ne riceve, sa che l'helper è morto |
 
 ## Cleanup obbligatorio
 

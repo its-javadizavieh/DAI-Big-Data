@@ -1,4 +1,4 @@
-# Lab Datasets — Guida per gli Studenti
+# Lab Datasets - Guida per gli Studenti
 
 In questo corso utilizziamo **2 dataset reali** che troverai nella cartella `labs/`. Questi file CSV saranno usati in quasi tutti i lab del corso. **Non modificarli** e **non cancellarli**.
 
@@ -6,7 +6,7 @@ In questo corso utilizziamo **2 dataset reali** che troverai nella cartella `lab
 
 ## 1. Serie A & Coppa Italia (serie_a_coppa_italia_2015_2023.csv)
 
-**Tema:** Calcio italiano — partite di Serie A e Coppa Italia
+**Tema:** Calcio italiano - partite di Serie A e Coppa Italia
 
 | Info         | Dettaglio                                            |
 | ------------ | ---------------------------------------------------- |

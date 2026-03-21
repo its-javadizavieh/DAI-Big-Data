@@ -1,4 +1,4 @@
-# Lab 20 — MongoDB: modellazione documenti e indici
+# Lab 20 - MongoDB: modellazione documenti e indici
 
 ## Obiettivo
 
@@ -17,7 +17,7 @@ Caricare dati reali di Serie A in MongoDB, progettare lo schema, creare indici e
 
 ## Dataset
 
-**serie_a_coppa_italia_2015_2023.csv** — useremo le colonne principali per creare documenti MongoDB.
+**serie_a_coppa_italia_2015_2023.csv** - useremo le colonne principali per creare documenti MongoDB.
 
 ---
 
@@ -72,7 +72,7 @@ Caricare dati reali di Serie A in MongoDB, progettare lo schema, creare indici e
    db.partite.findOne()
    ```
 
-3. **Cerca partite della Juventus — misura le performance:**
+3. **Cerca partite della Juventus - misura le performance:**
 
    ```javascript
    db.partite.find({ home: "Juventus" }).explain("executionStats");
@@ -125,7 +125,7 @@ Caricare dati reali di Serie A in MongoDB, progettare lo schema, creare indici e
    db.partite.createIndex({ match_id: 1 }, { unique: true });
    ```
 
-9. **Prova a inserire un duplicato — cosa succede?**
+9. **Prova a inserire un duplicato - cosa succede?**
 
    ```javascript
    db.partite.insertOne({ match_id: 8529, home: "Test", away: "Test" });

@@ -1,4 +1,4 @@
-# Lab 22 — Replicazione, consistenza e CAP theorem
+# Lab 22 - Replicazione, consistenza e CAP theorem
 
 ## Obiettivo
 
@@ -15,7 +15,7 @@ Comprendere come funziona la replicazione in MongoDB, analizzare il CAP theorem 
 
 ## Nota
 
-Questo è un lab **teorico/progettuale** — non serve codice, lavorerai su carta o in un file Markdown.
+Questo è un lab **teorico/progettuale** - non serve codice, lavorerai su carta o in un file Markdown.
 
 ---
 
@@ -46,8 +46,8 @@ Questo è un lab **teorico/progettuale** — non serve codice, lavorerai su cart
 ### Fase 2: Analisi CAP (10 minuti)
 
 3. **Il CAP theorem dice che in caso di partizione di rete, puoi avere SOLO uno tra:**
-   - **C** (Consistency) — tutti leggono lo stesso dato
-   - **A** (Availability) — il sistema risponde sempre
+   - **C** (Consistency) - tutti leggono lo stesso dato
+   - **A** (Availability) - il sistema risponde sempre
 
 4. **Analizza 3 scenari. Per ognuno, scegli CP o AP:**
 
@@ -106,4 +106,4 @@ Questo è un lab **teorico/progettuale** — non serve codice, lavorerai su cart
 
 ## Cleanup
 
-Nessun cleanup richiesto — lab teorico.
+Nessun cleanup richiesto - lab teorico.

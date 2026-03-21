@@ -1,4 +1,4 @@
-# Lab 18 — Pulizia dati e trasformazioni batch
+# Lab 18 - Pulizia dati e trasformazioni batch
 
 ## Obiettivo
 
@@ -15,7 +15,7 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
 
 ## Dataset
 
-**serie_a_coppa_italia_2015_2023.csv** — 3.788 partite, ~230 colonne. Per questo lab ci concentreremo sulle colonne principali: `ID`, `Competition_Name`, `Season_End_Year`, `Date`, `Home`, `Away`, `HomeGoals`, `AwayGoals`, `Referee`, `possessiontime_home`, `possessiontime_away`, `shots_total_home`, `shots_ongoal_home`, `yellow_cards_home`, `red_cards_home`, `fouls_home`.
+**serie_a_coppa_italia_2015_2023.csv** - 3.788 partite, ~230 colonne. Per questo lab ci concentreremo sulle colonne principali: `ID`, `Competition_Name`, `Season_End_Year`, `Date`, `Home`, `Away`, `HomeGoals`, `AwayGoals`, `Referee`, `possessiontime_home`, `possessiontime_away`, `shots_total_home`, `shots_ongoal_home`, `yellow_cards_home`, `red_cards_home`, `fouls_home`.
 
 ---
 
@@ -68,14 +68,14 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
 
 ### Fase 3: Gestisci i null (7 minuti)
 
-4. **Colonne critiche — rimuovi righe senza ID o squadre:**
+4. **Colonne critiche - rimuovi righe senza ID o squadre:**
 
    ```python
    step1 = df.dropna(subset=["ID", "Home", "Away"])
    print(f"Dopo dropna critici: {step1.count()} righe")
    ```
 
-5. **Colonne numeriche — riempii con 0 dove manca:**
+5. **Colonne numeriche - riempii con 0 dove manca:**
 
    ```python
    numeric_cols = ["shots_total_home", "shots_ongoal_home",
@@ -85,7 +85,7 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
    print(f"Dopo fillna numerici: {step2.count()} righe")
    ```
 
-6. **Colonne testo — riempi con "Sconosciuto":**
+6. **Colonne testo - riempi con "Sconosciuto":**
 
    ```python
    step3 = step2.fillna("Sconosciuto", subset=["Referee"])
@@ -163,7 +163,7 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
 | Problema                   | Soluzione                                        |
 | -------------------------- | ------------------------------------------------ |
 | "Path does not exist"      | Controlla che il CSV sia nella cartella corretta |
-| `inferSchema` molto lento  | Normale per 3.788 righe — aspetta                |
+| `inferSchema` molto lento  | Normale per 3.788 righe - aspetta                |
 | Colonne con spazi nei nomi | Usa backtick: ``col("`Nome Colonna`")``          |
 
 ## Cleanup

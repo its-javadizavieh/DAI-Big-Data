@@ -1,4 +1,4 @@
-# Lab 01 — Introduzione ai Big Data e le 5V
+# Lab 01 - Introduzione ai Big Data e le 5V
 
 ## Obiettivo
 
@@ -62,7 +62,7 @@ Il tuo compito: analizzare questi dati per creare la playlist "Discover Weekly" 
    - Troppi dati per un solo computer
    - Formati diversi da integrare
 
-4. **Proponi soluzioni**: per ogni problema, suggerisci un approccio (non serve essere tecnici — basta il concetto).
+4. **Proponi soluzioni**: per ogni problema, suggerisci un approccio (non serve essere tecnici - basta il concetto).
 
    Esempio: _"I record con durata = 0 sono errori → soluzione: filtrarli durante l'elaborazione"_
 

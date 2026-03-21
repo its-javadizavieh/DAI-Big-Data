@@ -1,4 +1,4 @@
-# Lab 24 — Mini-progetto: progettazione e avvio
+# Lab 24 - Mini-progetto: progettazione e avvio
 
 ## Obiettivo
 
@@ -21,12 +21,12 @@ Progettare una pipeline Big Data completa su un dataset reale e avviarne l'imple
 
 1. **Scegli UNO dei due dataset e UNO dei temi suggeriti:**
 
-   **Opzione A — Serie A (calcio)**
+   **Opzione A - Serie A (calcio)**
    - Tema 1: "Analisi performance delle squadre top 6 nelle ultime 5 stagioni"
    - Tema 2: "Fattore campo: come cambia il vantaggio di giocare in casa"
    - Tema 3: "Statistiche arbitri: chi dà più cartellini?"
 
-   **Opzione B — Superstore (vendite)**
+   **Opzione B - Superstore (vendite)**
    - Tema 1: "Report vendite per regione: trend e top clienti"
    - Tema 2: "Analisi categorie prodotti: cosa vende di più e dove"
    - Tema 3: "Segmentazione clienti: Consumer vs Corporate vs Home Office"
@@ -70,7 +70,7 @@ Progettare una pipeline Big Data completa su un dataset reale e avviarne l'imple
 
 ### Fase 3: Avvia l'implementazione (15 minuti)
 
-4. **Step 1 — Ingestione e pulizia:**
+4. **Step 1 - Ingestione e pulizia:**
 
    ```python
    from pyspark.sql import SparkSession
@@ -84,7 +84,7 @@ Progettare una pipeline Big Data completa su un dataset reale e avviarne l'imple
    print(f"Righe: {df.count()}, Colonne: {len(df.columns)}")
    ```
 
-5. **Step 2 — Seleziona e pulisci:**
+5. **Step 2 - Seleziona e pulisci:**
 
    ```python
    # Seleziona le colonne che ti servono
@@ -96,7 +96,7 @@ Progettare una pipeline Big Data completa su un dataset reale e avviarne l'imple
    print(f"Righe pulite: {clean.count()}")
    ```
 
-6. **Step 3 — Prima query (rispondi alla domanda 1):**
+6. **Step 3 - Prima query (rispondi alla domanda 1):**
 
    ```python
    clean.createOrReplaceTempView("project_data")
@@ -130,7 +130,7 @@ Progettare una pipeline Big Data completa su un dataset reale e avviarne l'imple
 
 ## Suggerimenti
 
-- Non scegliere troppe colonne — 8-12 sono sufficienti
+- Non scegliere troppe colonne - 8-12 sono sufficienti
 - Le domande devono essere specifiche: "Quale regione..." è meglio di "Analizza le vendite"
 - Puoi combinare query semplici (filtri, group by) con una più avanzata (window function)
 

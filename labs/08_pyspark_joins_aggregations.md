@@ -1,4 +1,4 @@
-# Lab 08 — PySpark: join e aggregazioni
+# Lab 08 - PySpark: join e aggregazioni
 
 ## Obiettivo
 

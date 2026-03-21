@@ -1,4 +1,4 @@
-# Lab 07 — PySpark azioni e lazy evaluation
+# Lab 07 - PySpark azioni e lazy evaluation
 
 ## Obiettivo
 
@@ -59,7 +59,7 @@ Devi analizzare le performance di un dataset di vendite e capire se il caching m
 ## Troubleshooting rapido
 
 - "explain() non mostra nulla": assicurati di chiamare explain() su un DataFrame, non su un'azione
-- "Il caching non migliora i tempi": su dataset piccoli la differenza può essere minima — è normale
+- "Il caching non migliora i tempi": su dataset piccoli la differenza può essere minima - è normale
 
 ## Cleanup obbligatorio
 

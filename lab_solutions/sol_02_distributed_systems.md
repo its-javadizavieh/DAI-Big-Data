@@ -1,4 +1,4 @@
-# Soluzioni Lab 02 — Sistemi distribuiti: cluster, nodi, parallelismo
+# Soluzioni Lab 02 - Sistemi distribuiti: cluster, nodi, parallelismo
 
 ## Esercizio 1: Diagramma del cluster
 

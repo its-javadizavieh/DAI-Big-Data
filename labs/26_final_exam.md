@@ -1,8 +1,8 @@
-# Lab 26 — Verifica finale
+# Lab 26 - Verifica finale
 
 ## Obiettivo
 
-Verifica finale del corso: copre le lezioni 15-25 — NoSQL Databases, Data Ingestion & Processing, Data Storage & Scalability.
+Verifica finale del corso: copre le lezioni 15-25 - NoSQL Databases, Data Ingestion & Processing, Data Storage & Scalability.
 
 **I temi già verificati nel midterm (L01-L13) NON sono in questo esame.**
 
@@ -21,16 +21,16 @@ Verifica finale del corso: copre le lezioni 15-25 — NoSQL Databases, Data Inge
 
 | Sezione | Peso |
 |---------|------|
-| Parte A — Teoria | 30% |
-| Parte B1 — MongoDB | 35% |
-| Parte B2 — Pipeline E2E | 35% |
+| Parte A - Teoria | 30% |
+| Parte B1 - MongoDB | 35% |
+| Parte B2 - Pipeline E2E | 35% |
 
 **Soglia sufficienza**: 60/100.
 **Voto finale corso** = 50% Midterm + 50% Esame Finale.
 
 ---
 
-## Parte A — Teoria (30 minuti)
+## Parte A - Teoria (30 minuti)
 
 Rispondi in una cella Markdown del notebook (2-3 frasi per domanda).
 
@@ -56,60 +56,60 @@ Descrivi una **pipeline di data ingestion** completa (da CSV a MongoDB). Quali s
 
 ---
 
-## Parte B1 — MongoDB Pratico (1 ora)
+## Parte B1 - MongoDB Pratico (1 ora)
 
 Lavora in `mongosh`.
 
-### Esercizio B1.1 — CRUD (5 punti)
+### Esercizio B1.1 - CRUD (5 punti)
 
 1. Crea il database `final_exam` e la collezione `products`
 2. Inserisci almeno 8 documenti con campi: name, price, category, stock, tags (array)
 
-### Esercizio B1.2 — Query (10 punti)
+### Esercizio B1.2 - Query (10 punti)
 
 3. Trova tutti i prodotti in "Electronics" con price > 200
 4. Trova i prodotti con stock < 10 (low stock alert)
 5. Trova i prodotti che hanno "sale" nel loro array tags
 
-### Esercizio B1.3 — Update (5 punti)
+### Esercizio B1.3 - Update (5 punti)
 
 6. Aumenta il prezzo di tutti i prodotti "Electronics" del 10% usando `$mul`
 
-### Esercizio B1.4 — Aggregation Pipeline (10 punti)
+### Esercizio B1.4 - Aggregation Pipeline (10 punti)
 
 7. Scrivi un aggregation pipeline che raggruppa per category e calcola: totale stock e media prezzo per categoria
 
-### Esercizio B1.5 — Index (5 punti)
+### Esercizio B1.5 - Index (5 punti)
 
 8. Crea un indice su `{category: 1, price: -1}`
 9. Usa `explain()` per dimostrare che l'indice viene usato
 
 ---
 
-## Parte B2 — Pipeline E2E (1 ora)
+## Parte B2 - Pipeline E2E (1 ora)
 
 Lavora in VS Code (estensione Jupyter) con PySpark + pymongo.
 
-### Esercizio B2.1 — Caricamento (5 punti)
+### Esercizio B2.1 - Caricamento (5 punti)
 
 1. Carica il tuo dataset CSV con PySpark. Stampa righe e schema.
 
-### Esercizio B2.2 — Pulizia e trasformazione (10 punti)
+### Esercizio B2.2 - Pulizia e trasformazione (10 punti)
 
 2. Rimuovi null e duplicati
 3. Crea almeno 2 colonne derivate
 
-### Esercizio B2.3 — Analisi Spark SQL (10 punti)
+### Esercizio B2.3 - Analisi Spark SQL (10 punti)
 
 4. Registra una vista temporanea
 5. Scrivi 2 query significative con GROUP BY e aggregazioni
 
-### Esercizio B2.4 — Salvataggio in MongoDB (5 punti)
+### Esercizio B2.4 - Salvataggio in MongoDB (5 punti)
 
 6. Inserisci i risultati delle query in MongoDB usando pymongo
 7. Verifica con `count_documents()`
 
-### Esercizio B2.5 — Verifica (5 punti)
+### Esercizio B2.5 - Verifica (5 punti)
 
 8. In mongosh, interroga i risultati salvati e mostra che corrispondono all'output di Spark SQL
 

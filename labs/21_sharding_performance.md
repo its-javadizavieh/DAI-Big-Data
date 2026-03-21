@@ -1,4 +1,4 @@
-# Lab 21 — Sharding e ottimizzazione performance
+# Lab 21 - Sharding e ottimizzazione performance
 
 ## Obiettivo
 
@@ -17,13 +17,13 @@ Progettare una strategia di sharding per il dataset di vendite, ottimizzare quer
 
 ## Dataset
 
-**superstore_sales.csv** — 9.800 ordini. Caricheremo i dati in MongoDB per simulare un database di produzione.
+**superstore_sales.csv** - 9.800 ordini. Caricheremo i dati in MongoDB per simulare un database di produzione.
 
 ---
 
 ## Step
 
-### Fase 1: Progetta la shard key (5 minuti — carta/markdown)
+### Fase 1: Progetta la shard key (5 minuti - carta/markdown)
 
 1. **Analizza le colonne del dataset Superstore:**
    - `Order ID`, `Customer ID`, `Region`, `Category`, `Sales`, `Order Date`
@@ -101,7 +101,7 @@ Progettare una strategia di sharding per il dataset di vendite, ottimizzare quer
    **Annota e confronta:**
    - `totalDocsExamined`: \_\_\_\_ (molto meno!)
 
-### Fase 5: Aggregation pipeline — ottimizzazione (10 minuti)
+### Fase 5: Aggregation pipeline - ottimizzazione (10 minuti)
 
 6. **Pipeline LENTA (ordine sbagliato degli stage):**
 
@@ -163,7 +163,7 @@ Progettare una strategia di sharding per il dataset di vendite, ottimizzare quer
 | Problema                | Soluzione                                                                        |
 | ----------------------- | -------------------------------------------------------------------------------- |
 | Inserimento lento       | Usa `insert_many` in un'unica chiamata                                           |
-| Tempi identici          | Su ~10K documenti la differenza è piccola — annotala comunque                    |
+| Tempi identici          | Su ~10K documenti la differenza è piccola - annotala comunque                    |
 | Errore float conversion | Alcuni Sales potrebbero avere virgola. Usa `float(row["Sales"].replace(",",""))` |
 
 ## Cleanup

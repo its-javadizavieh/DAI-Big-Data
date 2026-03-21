@@ -1,4 +1,4 @@
-# Lab 03 — Partizionamento, replicazione, fault tolerance
+# Lab 03 - Partizionamento, replicazione, fault tolerance
 
 ## Obiettivo
 
@@ -16,11 +16,11 @@ Scegliere come dividere i dati, capire perché fare copie, e simulare cosa succe
 
 Gestisci i dati di una piattaforma di streaming musicale (tipo Spotify) con un cluster di 4 helper. Hai 3 dataset:
 
-- **Dataset A**: cronologia ascolti di tutti gli utenti italiani — 8 GB
+- **Dataset A**: cronologia ascolti di tutti gli utenti italiani - 8 GB
   - Colonne: `user_id, canzone, artista, timestamp, durata_secondi`
-- **Dataset B**: anagrafica utenti — 1 GB
+- **Dataset B**: anagrafica utenti - 1 GB
   - Colonne: `user_id, nome, eta, citta, data_iscrizione`
-- **Dataset C**: catalogo canzoni — 2 GB
+- **Dataset C**: catalogo canzoni - 2 GB
   - Colonne: `canzone_id, titolo, artista, genere, anno, durata`
 
 ## Step
@@ -85,7 +85,7 @@ Gestisci i dati di una piattaforma di streaming musicale (tipo Spotify) con un c
 
 | Problema                          | Soluzione                                                                                                         |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| Non so scegliere la strategia     | Chiediti: "Come cercherò i dati?" — se per chiave specifica → hash; se per range di date → range                  |
+| Non so scegliere la strategia     | Chiediti: "Come cercherò i dati?" - se per chiave specifica → hash; se per range di date → range                  |
 | Il calcolo replicazione non torna | Spazio totale = dimensione × numero di copie                                                                      |
 | Non capisco lo skew               | Pensa: se dividi una classe per cognome iniziale, la lettera "R" (Rossi, Russo...) avrà molti più studenti di "Q" |
 

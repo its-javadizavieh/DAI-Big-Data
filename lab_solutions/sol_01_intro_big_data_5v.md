@@ -1,4 +1,4 @@
-# Soluzioni Lab 01 — Introduzione ai Big Data e le 5V
+# Soluzioni Lab 01 - Introduzione ai Big Data e le 5V
 
 ## Esercizio 1: Tabella delle 5V (scenario Spotify)
 

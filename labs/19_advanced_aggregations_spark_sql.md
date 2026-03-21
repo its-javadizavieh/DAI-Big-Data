@@ -1,4 +1,4 @@
-# Lab 19 — Aggregazioni avanzate e Spark SQL
+# Lab 19 - Aggregazioni avanzate e Spark SQL
 
 ## Obiettivo
 
@@ -15,7 +15,7 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
 
 ## Dataset
 
-**superstore_sales.csv** — 9.800 ordini. Useremo: `Order Date`, `Region`, `State`, `City`, `Category`, `Sub-Category`, `Sales`.
+**superstore_sales.csv** - 9.800 ordini. Useremo: `Order Date`, `Region`, `State`, `City`, `Category`, `Sub-Category`, `Sales`.
 
 ---
 
@@ -128,7 +128,7 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
    running.filter(col("Region") == "East").show(10)
    ```
 
-### Fase 5: ROLLUP — Subtotali (4 minuti)
+### Fase 5: ROLLUP - Subtotali (4 minuti)
 
 7. **Crea subtotali per regione e stato:**
 

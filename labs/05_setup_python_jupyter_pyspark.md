@@ -1,4 +1,4 @@
-# Lab 05 — Setup ambiente: Python + Jupyter + PySpark
+# Lab 05 - Setup ambiente: Python + Jupyter + PySpark
 
 ## Obiettivo
 
@@ -20,7 +20,7 @@ Oggi configuri il tuo ambiente di lavoro per il resto del corso. Alla fine di qu
 
 ## Dataset del corso
 
-Durante il corso userai **2 dataset** già inclusi nella cartella `labs/`. **Non serve scaricare nulla** — i file sono già pronti.
+Durante il corso userai **2 dataset** già inclusi nella cartella `labs/`. **Non serve scaricare nulla** - i file sono già pronti.
 
 | Dataset                    | File                                 | Righe         | Uso principale                    |
 | -------------------------- | ------------------------------------ | ------------- | --------------------------------- |
@@ -168,8 +168,8 @@ Consulta `00_datasets_description.md` per la descrizione completa delle colonne.
 | ------------------------------------------------ | ---------------------------------------------------------- |
 | `ModuleNotFoundError: No module named 'pyspark'` | Attiva il venv e riesegui `pip install pyspark`            |
 | `FileNotFoundError` quando leggi il CSV          | Il file deve essere nella stessa cartella del notebook     |
-| Spark è lento a partire                          | È normale — il primo avvio può richiedere 10-20 secondi    |
-| `JAVA_HOME is not set`                           | Chiedi al docente — risolviamo insieme in classe           |
+| Spark è lento a partire                          | È normale - il primo avvio può richiedere 10-20 secondi    |
+| `JAVA_HOME is not set`                           | Chiedi al docente - risolviamo insieme in classe           |
 | Il kernel non vede PySpark                       | Verifica di aver selezionato il kernel dal venv in VS Code |
 
 ## Cleanup obbligatorio

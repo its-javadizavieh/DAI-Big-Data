@@ -1,4 +1,4 @@
-# Lab 16 — MongoDB: installazione e operazioni CRUD
+# Lab 16 - MongoDB: installazione e operazioni CRUD
 
 ## Obiettivo
 
@@ -19,7 +19,7 @@ Devi creare un piccolo database per archiviare le partite di Serie A. Imparerai 
 
 ## Dataset
 
-Per questo lab inserirai i dati **manualmente** — così capisci come funziona MongoDB. Dal Lab 13 in poi userai i CSV del corso.
+Per questo lab inserirai i dati **manualmente** - così capisci come funziona MongoDB. Dal Lab 13 in poi userai i CSV del corso.
 
 ---
 
@@ -27,15 +27,15 @@ Per questo lab inserirai i dati **manualmente** — così capisci come funziona 
 
 ### Fase 1: Installazione (5 minuti)
 
-1. **Installa MongoDB** — scegli UNA opzione:
+1. **Installa MongoDB** - scegli UNA opzione:
 
-   **Opzione A — Docker (consigliata):**
+   **Opzione A - Docker (consigliata):**
 
    ```bash
    docker run -d -p 27017:27017 --name mongo mongo:7
    ```
 
-   **Opzione B — Installazione manuale:**
+   **Opzione B - Installazione manuale:**
    - Linux: `sudo apt install mongodb-org`
    - Mac: `brew install mongodb-community`
    - Windows: scarica da mongodb.com/try/download
@@ -152,7 +152,7 @@ Per questo lab inserirai i dati **manualmente** — così capisci come funziona 
 
 ### Fase 4: Aggiorna e cancella (7 minuti)
 
-10. **Aggiorna una partita** — aggiungi il possesso palla:
+10. **Aggiorna una partita** - aggiungi il possesso palla:
 
     ```javascript
     db.partite.updateOne(

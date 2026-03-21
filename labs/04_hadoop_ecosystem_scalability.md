@@ -1,4 +1,4 @@
-# Lab 04 — Da Hadoop a Spark: perché usiamo Python
+# Lab 04 - Da Hadoop a Spark: perché usiamo Python
 
 ## Obiettivo
 
@@ -59,9 +59,9 @@ Il tuo responsabile ti chiede: "Perché usiamo Spark e Python invece di Hadoop? 
 
    e) Dobbiamo installare Java per usare PySpark? (suggerimento: `pip install pyspark`...)
 
-4. **Bonus — paragone vita reale**: inventa un'analogia per spiegare la differenza tra Hadoop e Spark a qualcuno che non sa nulla di informatica.
+4. **Bonus - paragone vita reale**: inventa un'analogia per spiegare la differenza tra Hadoop e Spark a qualcuno che non sa nulla di informatica.
 
-   Esempio: _"Hadoop è come cucinare mettendo ogni ingrediente in frigo tra un passaggio e l'altro. Spark è come tenere tutto sul bancone — molto più veloce."_
+   Esempio: _"Hadoop è come cucinare mettendo ogni ingrediente in frigo tra un passaggio e l'altro. Spark è come tenere tutto sul bancone - molto più veloce."_
 
 ## Output atteso
 
@@ -82,7 +82,7 @@ Il tuo responsabile ti chiede: "Perché usiamo Spark e Python invece di Hadoop? 
 | Problema                  | Soluzione                                                                                              |
 | ------------------------- | ------------------------------------------------------------------------------------------------------ |
 | Non ricordo le date       | Rivedi le slide della lezione o cerca "hadoop spark timeline"                                          |
-| Non so rispondere al quiz | Le risposte sono tutte nelle slide — rileggi con calma                                                 |
+| Non so rispondere al quiz | Le risposte sono tutte nelle slide - rileggi con calma                                                 |
 | Non mi viene un'analogia  | Pensa a un'attività quotidiana con passaggi intermedi (cucinare, costruire con i Lego, fare i compiti) |
 
 ## Cleanup obbligatorio

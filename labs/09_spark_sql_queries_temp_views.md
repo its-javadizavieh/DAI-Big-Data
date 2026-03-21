@@ -1,4 +1,4 @@
-# Lab 09 — Spark SQL: query e viste temporanee
+# Lab 09 - Spark SQL: query e viste temporanee
 
 ## Obiettivo
 

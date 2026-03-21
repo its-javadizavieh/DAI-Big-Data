@@ -1,4 +1,4 @@
-# Lab 10 — Formati file: CSV, JSON, Parquet
+# Lab 10 - Formati file: CSV, JSON, Parquet
 
 ## Obiettivo
 

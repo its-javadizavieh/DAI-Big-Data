@@ -1,4 +1,4 @@
-# Lab 06 — PySpark DataFrame API: trasformazioni
+# Lab 06 - PySpark DataFrame API: trasformazioni
 
 ## Obiettivo
 
@@ -34,7 +34,7 @@ Sei un data analyst in un'azienda di e-commerce. Il tuo manager vuole un report 
 
    Verifica che la tabella abbia 9.800 righe e 18 colonne.
 
-2. **select() — Seleziona solo alcune colonne**: mostra solo il nome del cliente e le vendite.
+2. **select() - Seleziona solo alcune colonne**: mostra solo il nome del cliente e le vendite.
 
    ```python
    df.select("Customer Name", "Sales").show(5)
@@ -42,7 +42,7 @@ Sei un data analyst in un'azienda di e-commerce. Il tuo manager vuole un report 
 
    **Prova tu**: seleziona `Customer Name`, `City` e `Category`. Scrivi il codice e verifica.
 
-3. **filter() — Filtra le righe**: trova gli ordini con vendite sopra 500.
+3. **filter() - Filtra le righe**: trova gli ordini con vendite sopra 500.
 
    ```python
    grandi_ordini = df.filter(col("Sales") > 500)
@@ -50,7 +50,7 @@ Sei un data analyst in un'azienda di e-commerce. Il tuo manager vuole un report 
    print(f"Ordini con Sales > 500: {grandi_ordini.count()}")
    ```
 
-   **Prova tu** — filtro con 2 condizioni: trova ordini di `Technology` con vendite sopra 100.
+   **Prova tu** - filtro con 2 condizioni: trova ordini di `Technology` con vendite sopra 100.
 
    ```python
    # Completa tu:
@@ -60,7 +60,7 @@ Sei un data analyst in un'azienda di e-commerce. Il tuo manager vuole un report 
 
    **Attenzione**: usa `&` (non `and`) e metti le parentesi attorno a ogni condizione!
 
-4. **withColumn() — Aggiungi una colonna calcolata**: calcola le vendite con tassa del 10%.
+4. **withColumn() - Aggiungi una colonna calcolata**: calcola le vendite con tassa del 10%.
 
    ```python
    df2 = df.withColumn(
@@ -86,7 +86,7 @@ Sei un data analyst in un'azienda di e-commerce. Il tuo manager vuole un report 
    df4.select("City", "City_Upper").show(5)
    ```
 
-6. **withColumnRenamed() — Rinomina una colonna**:
+6. **withColumnRenamed() - Rinomina una colonna**:
 
    ```python
    df_rin = df.withColumnRenamed("Customer Name", "Customer") \
@@ -94,14 +94,14 @@ Sei un data analyst in un'azienda di e-commerce. Il tuo manager vuole un report 
    df_rin.select("Customer", "SubCategory", "Sales").show(5)
    ```
 
-7. **drop() — Elimina una colonna**: rimuovi la colonna `Row ID` (non ci serve nel report).
+7. **drop() - Elimina una colonna**: rimuovi la colonna `Row ID` (non ci serve nel report).
 
    ```python
    df_no_id = df.drop("Row ID")
    df_no_id.show(5)
    ```
 
-8. **orderBy() — Ordina i dati**: ordina per vendite dal più alto al più basso.
+8. **orderBy() - Ordina i dati**: ordina per vendite dal più alto al più basso.
 
    ```python
    df.orderBy(col("Sales").desc()).show(5)
@@ -113,7 +113,7 @@ Sei un data analyst in un'azienda di e-commerce. Il tuo manager vuole un report 
    df.orderBy("Category", col("Sales").desc()).show(5)
    ```
 
-9. **Chain — Concatena tutto in un'unica espressione**:
+9. **Chain - Concatena tutto in un'unica espressione**:
 
    ```python
    report = (
@@ -166,8 +166,8 @@ Sei un data analyst in un'azienda di e-commerce. Il tuo manager vuole un report 
 | Errore                                          | Soluzione                                                                          |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------- | -------- |
 | `AnalysisException: cannot resolve column name` | Controlla maiuscole/minuscole: `df.columns` ti mostra i nomi esatti                |
-| `TypeError: Column is not iterable`             | Hai usato `and` invece di `&` — PySpark vuole `&` per AND e `                      | ` per OR |
-| La colonna calcolata non compare                | Ricorda: `withColumn()` restituisce un NUOVO DataFrame — salvalo in una variabile! |
+| `TypeError: Column is not iterable`             | Hai usato `and` invece di `&` - PySpark vuole `&` per AND e `                      | ` per OR |
+| La colonna calcolata non compare                | Ricorda: `withColumn()` restituisce un NUOVO DataFrame - salvalo in una variabile! |
 | `NameError: name 'col' is not defined`          | Aggiungi `from pyspark.sql.functions import col` all'inizio                        |
 
 ## Cleanup obbligatorio

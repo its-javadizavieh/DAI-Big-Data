@@ -1,4 +1,4 @@
-# Lab 11 — Introduzione a Spark Streaming + demo
+# Lab 11 - Introduzione a Spark Streaming + demo
 
 ## Obiettivo
 
@@ -21,7 +21,7 @@ Questo lab mescola teoria (10 min) e demo pratica (20 min). La demo usa file CSV
 
 ## Step
 
-### Fase 1: Teoria — Batch vs Streaming (10 minuti)
+### Fase 1: Teoria - Batch vs Streaming (10 minuti)
 
 1. **Completa questa tabella:**
 
@@ -142,7 +142,7 @@ Questo lab mescola teoria (10 min) e demo pratica (20 min). La demo usa file CSV
 
 | Problema                        | Soluzione                                                                |
 | ------------------------------- | ------------------------------------------------------------------------ |
-| "Schema must be specified"      | Lo schema è OBBLIGATORIO per readStream — definiscilo con StructType     |
+| "Schema must be specified"      | Lo schema è OBBLIGATORIO per readStream - definiscilo con StructType     |
 | Nessun output                   | Aspetta 5-10 secondi. Lo stream controlla la cartella ogni pochi secondi |
 | "Cannot call show on streaming" | Con streaming usa `writeStream`, NON `.show()`                           |
 | Errore "already exists"         | Cancella `streaming_output/` e riprova                                   |

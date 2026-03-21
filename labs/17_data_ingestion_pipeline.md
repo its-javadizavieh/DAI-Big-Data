@@ -1,4 +1,4 @@
-# Lab 17 — Pipeline di ingestion: CSV → PySpark → MongoDB
+# Lab 17 - Pipeline di ingestion: CSV → PySpark → MongoDB
 
 ## Obiettivo
 
@@ -16,13 +16,13 @@ Costruire una pipeline ETL semplice: caricare il CSV del Superstore con PySpark,
 
 ## Dataset
 
-**superstore_sales.csv** — 9.800 ordini di un negozio retail USA. Colonne principali: `Order ID`, `Order Date`, `Ship Mode`, `Customer Name`, `Segment`, `Region`, `Category`, `Sub-Category`, `Sales`.
+**superstore_sales.csv** - 9.800 ordini di un negozio retail USA. Colonne principali: `Order ID`, `Order Date`, `Ship Mode`, `Customer Name`, `Segment`, `Region`, `Category`, `Sub-Category`, `Sales`.
 
 ---
 
 ## Step
 
-### Fase 1: Extract — Carica il CSV (5 minuti)
+### Fase 1: Extract - Carica il CSV (5 minuti)
 
 1. **Avvia Spark e carica il CSV:**
 
@@ -40,7 +40,7 @@ Costruire una pipeline ETL semplice: caricare il CSV del Superstore con PySpark,
    df.show(5)
    ```
 
-### Fase 2: Validate — Controlla i dati (5 minuti)
+### Fase 2: Validate - Controlla i dati (5 minuti)
 
 2. **Conta i null per colonna:**
 
@@ -65,7 +65,7 @@ Costruire una pipeline ETL semplice: caricare il CSV del Superstore con PySpark,
    print(f"Duplicati: {total - unique}")
    ```
 
-### Fase 3: Clean — Pulisci i dati (8 minuti)
+### Fase 3: Clean - Pulisci i dati (8 minuti)
 
 4. **Rimuovi duplicati e null critici:**
 
@@ -101,7 +101,7 @@ Costruire una pipeline ETL semplice: caricare il CSV del Superstore con PySpark,
    clean_df = clean_df.withColumn("Sales", spark_round(col("Sales"), 2))
    ```
 
-### Fase 4: Load — Inserisci in MongoDB (8 minuti)
+### Fase 4: Load - Inserisci in MongoDB (8 minuti)
 
 7. **Seleziona le colonne che ti servono:**
 

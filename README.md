@@ -1,6 +1,6 @@
-# Big Data — Lab & Esercitazioni
+# Big Data - Lab & Esercitazioni
 
-Materiali didattici per il corso **"Big Data"** — ITS ICT Piemonte, Tecnico Superiore Data Analyst & AI Specialist B.F. 2025/2027.
+Materiali didattici per il corso **"Big Data"** - ITS ICT Piemonte, Tecnico Superiore Data Analyst & AI Specialist B.F. 2025/2027.
 
 ## 📚 About This Repository
 
@@ -17,7 +17,7 @@ Each lab includes:
 
 Hands-on laboratory exercises (Italian) covering:
 
-### Semester 1 — Big Data Foundations & PySpark
+### Semester 1 - Big Data Foundations & PySpark
 
 | Lab                                                | Topic                                            |
 | -------------------------------------------------- | ------------------------------------------------ |
@@ -37,7 +37,7 @@ Hands-on laboratory exercises (Italian) covering:
 | [13](labs/13_batch_pipeline_practice.md)           | Batch Pipeline Practice: CSV → PySpark → Parquet |
 | [14](labs/14_midterm_exam.md)                      | Verifica intermedia (Midterm)                    |
 
-### Semester 2 — NoSQL, MongoDB & Pipeline
+### Semester 2 - NoSQL, MongoDB & Pipeline
 
 | Lab                                              | Topic                                          |
 | ------------------------------------------------ | ---------------------------------------------- |
@@ -92,7 +92,7 @@ Two real-world datasets are included in `labs/`:
 
 | File                                 | Description                                                   |
 | ------------------------------------ | ------------------------------------------------------------- |
-| `serie_a_coppa_italia_2015_2023.csv` | Italian football — Serie A & Coppa Italia matches (2015–2023) |
+| `serie_a_coppa_italia_2015_2023.csv` | Italian football - Serie A & Coppa Italia matches (2015–2023) |
 | `superstore_sales.csv`               | E-commerce sales data (Superstore)                            |
 
 > Students must choose **one** dataset before Lab 01 and use it throughout the course.

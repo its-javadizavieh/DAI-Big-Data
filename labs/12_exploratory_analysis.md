@@ -1,4 +1,4 @@
-# Lab 12 — Analisi esplorativa: Serie A e Coppa Italia
+# Lab 12 - Analisi esplorativa: Serie A e Coppa Italia
 
 ## Obiettivo
 
@@ -15,7 +15,7 @@ Condurre un'analisi esplorativa (EDA) completa sul dataset di calcio italiano, r
 
 ## Dataset
 
-**serie_a_coppa_italia_2015_2023.csv** — 3.788 partite (Serie A + Coppa Italia), stagioni 2015-2023.
+**serie_a_coppa_italia_2015_2023.csv** - 3.788 partite (Serie A + Coppa Italia), stagioni 2015-2023.
 
 ---
 

@@ -1,4 +1,4 @@
-# Lab 13 — Batch Pipeline Practice: CSV → PySpark → Parquet
+# Lab 13 - Batch Pipeline Practice: CSV → PySpark → Parquet
 
 ## Obiettivo
 
@@ -129,7 +129,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    df_transformed.createOrReplaceTempView("pipeline_data")
    ```
 
-   **Query 1 — Aggregazione per anno:**
+   **Query 1 - Aggregazione per anno:**
 
    **Serie A:**
    ```python
@@ -157,9 +157,9 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    q1.show()
    ```
 
-   **Query 2 — Top 5:** scrivi una query che trovi i top 5 (squadre per vittorie / sotto-categorie per vendite).
+   **Query 2 - Top 5:** scrivi una query che trovi i top 5 (squadre per vittorie / sotto-categorie per vendite).
 
-   **Query 3 — HAVING o Window Function:** scrivi una query avanzata con HAVING o RANK().
+   **Query 3 - HAVING o Window Function:** scrivi una query avanzata con HAVING o RANK().
 
 ### Fase 5: Salvataggio in Parquet (5 minuti)
 
