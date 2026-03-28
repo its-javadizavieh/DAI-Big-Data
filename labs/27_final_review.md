@@ -18,7 +18,7 @@ Intera lezione (3 ore)
 
 1. **Risultati generali**: il docente presenta le statistiche anonime della classe (media, mediana, distribuzione voti).
 2. **Errori comuni - Teoria**: per ogni domanda della Parte A, si discute la risposta corretta e i concetti collegati.
-3. **Errori comuni - MongoDB**: il docente mostra le query corrette per la Parte B1 e spiega gli errori più frequenti.
+3. **Errori comuni - TinyDB**: il docente mostra le query corrette per la Parte B1 e spiega gli errori più frequenti.
 4. **Errori comuni - Pipeline E2E**: si ripercorre insieme la pipeline completa corretta della Parte B2.
 
 ### Parte 2 - Feedback individuale (60 min)
@@ -31,7 +31,7 @@ Intera lezione (3 ore)
 ### Parte 3 - Chiusura corso (60 min)
 
 9. **Recap del corso**: riepilogo dei concetti chiave appresi nelle 26 lezioni precedenti.
-10. **Risorse per continuare**: il docente condivide link e piattaforme per approfondire (Databricks, MongoDB University, Kaggle).
+10. **Risorse per continuare**: il docente condivide link e piattaforme per approfondire (Databricks, TinyDB docs, MongoDB docs, Kaggle).
 11. **Feedback sul corso**: gli studenti compilano un breve questionario di valutazione del corso (anonimo).
 
 ## Output atteso

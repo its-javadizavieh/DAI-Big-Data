@@ -22,10 +22,10 @@ Oggi configuri il tuo ambiente di lavoro per il resto del corso. Alla fine di qu
 
 Durante il corso userai **2 dataset** già inclusi nella cartella `labs/`. **Non serve scaricare nulla** - i file sono già pronti.
 
-| Dataset                    | File                                 | Righe         | Uso principale                    |
-| -------------------------- | ------------------------------------ | ------------- | --------------------------------- |
-| **Serie A & Coppa Italia** | `serie_a_coppa_italia_2015_2023.csv` | 3.788 partite | Analisi esplorativa, SQL, join    |
-| **Superstore Sales**       | `superstore_sales.csv`               | 9.800 ordini  | Trasformazioni, pipeline, MongoDB |
+| Dataset                    | File                                 | Righe         | Uso principale                   |
+| -------------------------- | ------------------------------------ | ------------- | -------------------------------- |
+| **Serie A & Coppa Italia** | `serie_a_coppa_italia_2015_2023.csv` | 3.788 partite | Analisi esplorativa, SQL, join   |
+| **Superstore Sales**       | `superstore_sales.csv`               | 9.800 ordini  | Trasformazioni, pipeline, TinyDB |
 
 Consulta `00_datasets_description.md` per la descrizione completa delle colonne.
 

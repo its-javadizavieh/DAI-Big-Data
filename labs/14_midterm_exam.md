@@ -2,9 +2,9 @@
 
 ## Obiettivo
 
-Completare la verifica intermedia che copre le lezioni 01-13: Introduzione ai Big Data, Architetture Distribuite, Programmazione e Architettura (PySpark, Spark SQL, formati file, streaming, pipeline batch).
+Sostenere la verifica intermedia che copre le lezioni 01-13: Introduzione ai Big Data, Architetture Distribuite, Programmazione e Architettura (PySpark, Spark SQL, formati file, streaming, pipeline batch).
 
-**Nessuna domanda su MongoDB o NoSQL** - quei temi saranno nell'esame finale.
+**Nessuna domanda su TinyDB o NoSQL** - quei temi saranno nell'esame finale.
 
 ## Durata
 
@@ -17,27 +17,21 @@ Intera lezione (2 ore)
 
 ---
 
-## Parte A - Teoria (30 minuti)
+## Struttura della prova
 
-Rispondi alle domande in celle Markdown nel notebook. Spiega con parole tue (2-3 frasi per domanda).
+### Parte A - Teoria (30 minuti)
 
-1. Definisci le **5V dei Big Data** e fai un esempio pratico per ciascuna.
-2. Spiega la differenza tra **scalabilità verticale (scale-up) e orizzontale (scale-out)**. Perché per Big Data si preferisce scale-out?
-3. Cos'è la **lazy evaluation** in Spark? Perché è utile rispetto all'esecuzione immediata?
-4. Confronta **Parquet** e **CSV**: elenca 3 vantaggi specifici di Parquet per analytics.
-5. Cos'è lo **Spark Streaming**? Spiega la differenza tra elaborazione batch e micro-batch.
+- Risposte brevi in celle Markdown del notebook
+- 5 domande a risposta aperta
+- 2-3 frasi per domanda
+- Copertura: 5V, architetture distribuite, lazy evaluation, formati file, streaming
 
-## Parte B - PySpark Pratico (1 ora 20 minuti)
+### Parte B - PySpark pratico (1 ora 20 minuti)
 
-Usa il TUO dataset scelto all'inizio del corso.
-
-1. **Ingestione** (5 pt): Carica il CSV con PySpark. Stampa righe, colonne e schema.
-2. **Pulizia** (10 pt): Rimuovi null nelle colonne chiave e duplicati. Stampa quante righe sono state rimosse.
-3. **Trasformazione** (10 pt): Crea almeno 2 colonne derivate (es. total_goals, result, year, month / sales_level, year). Mostra l'output.
-4. **Spark SQL - Query 1** (15 pt): Registra una vista temporanea. Scrivi una query GROUP BY con almeno 2 funzioni aggregate (SUM, AVG, COUNT).
-5. **Spark SQL - Query 2** (15 pt): Scrivi una query con HAVING oppure una subquery.
-6. **Spark SQL - Query 3** (10 pt): Scrivi una query con window function (RANK, ROW_NUMBER o simili).
-7. **Salvataggio** (5 pt): Salva il dataset pulito in Parquet partizionato per anno. Confronta la dimensione con il CSV originale.
+- Uso del dataset scelto nel corso
+- Attività pratiche in PySpark e Spark SQL
+- Possibili aree: ingestione, pulizia, trasformazione, query SQL, salvataggio in Parquet
+- L'esatto testo della prova viene fornito dal docente durante l'esame
 
 ## Consegna
 
@@ -46,21 +40,35 @@ Usa il TUO dataset scelto all'inizio del corso.
 
 ## Valutazione
 
-| Parte | Peso |
-|-------|------|
-| A - Teoria | 30% |
-| B - PySpark Pratico | 70% |
+| Parte               | Peso |
+| ------------------- | ---- |
+| A - Teoria          | 30%  |
+| B - PySpark Pratico | 70%  |
 
 **Soglia sufficienza**: 60/100.
 **Peso sulla valutazione finale del corso**: 50%.
 
+## Regole
+
+- Lavoro individuale
+- Puoi consultare i tuoi appunti e la documentazione PySpark
+- Non puoi usare assistenti AI o soluzioni già pronte
+- Il docente fornisce il testo completo della prova all'inizio della lezione
+
 ## Troubleshooting
 
-| Problema | Soluzione |
-|----------|-----------|
-| Spark non parte | Riavvia il kernel Jupyter |
-| CSV non si carica | Verifica il percorso del file |
-| Errore colonne con spazi | Usa backtick: `` col("`Order Date`") `` |
+| Problema                 | Soluzione                             |
+| ------------------------ | ------------------------------------- |
+| Spark non parte          | Riavvia il kernel Jupyter             |
+| CSV non si carica        | Verifica il percorso del file         |
+| Errore colonne con spazi | Usa backtick: ``col("`Order Date`")`` |
+
+## Output atteso
+
+- Notebook consegnato entro la fine della lezione
+- Risposte teoriche complete
+- Parte pratica eseguibile
+- File salvato con il nome corretto
 
 ## Cleanup
 

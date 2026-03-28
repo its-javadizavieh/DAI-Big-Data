@@ -2,7 +2,7 @@
 
 ## Obiettivo
 
-Completare la pipeline del mini-progetto: analisi completa, salvataggio in MongoDB, e preparazione della presentazione.
+Completare il mini-progetto: query finali, salvataggio dei risultati, e sintesi conclusiva.
 
 ## Durata
 
@@ -10,157 +10,79 @@ Completare la pipeline del mini-progetto: analisi completa, salvataggio in Mongo
 
 ## Prerequisiti
 
-- Lab 24 completato (progettazione e avvio)
-- Notebook del Lab 24 aperto con dati già caricati
-
----
+- Lab 24 completato
+- Notebook già avviato
 
 ## Step
 
 ### Fase 1: Completa le query (10 minuti)
 
-1. **Riprendi dal Lab 24.** Hai già risposto alla domanda 1.
+Scrivi almeno 2 query Spark SQL che rispondano alle tue domande principali.
 
-2. **Query per la domanda 2:**
+```python
+clean.createOrReplaceTempView("project_data")
 
-   ```python
-   q2 = spark.sql("""
-       SELECT ...
-       FROM project_data
-       ...
-   """)
-   print("Risposta domanda 2:")
-   q2.show()
-   ```
+q1 = spark.sql("""
+SELECT ...
+FROM project_data
+...
+""")
 
-3. **Query per la domanda 3 (usa una tecnica avanzata come window function):**
+q2 = spark.sql("""
+SELECT ...
+FROM project_data
+...
+""")
+```
 
-   ```python
-   q3 = spark.sql("""
-       SELECT ...
-       FROM project_data
-       ...
-   """)
-   print("Risposta domanda 3:")
-   q3.show()
-   ```
+### Fase 2: Salva i risultati (10 minuti)
 
-### Fase 2: Salva in MongoDB (5 minuti)
+```python
+q1.write.mode("overwrite").parquet("output/query1.parquet")
+q2.write.mode("overwrite").parquet("output/query2.parquet")
 
-4. **Salva i risultati principali:**
+from tinydb import TinyDB
 
-   ```python
-   from pymongo import MongoClient
+db = TinyDB("mini_project_results.json")
+t1 = db.table("query1_results")
+t2 = db.table("query2_results")
 
-   client = MongoClient("mongodb://localhost:27017/")
-   db = client["mini_project"]
+t1.truncate()
+t2.truncate()
 
-   # Salva risultato query 1
-   col1 = db["query_1_results"]
-   col1.delete_many({})
-   col1.insert_many([row.asDict() for row in q1.collect()])
-   print(f"Query 1: {col1.count_documents({})} documenti salvati")
+t1.insert_multiple([row.asDict() for row in q1.collect()])
+t2.insert_multiple([row.asDict() for row in q2.collect()])
+```
 
-   # Salva risultato query 2
-   col2 = db["query_2_results"]
-   col2.delete_many({})
-   col2.insert_many([row.asDict() for row in q2.collect()])
-   print(f"Query 2: {col2.count_documents({})} documenti salvati")
+### Fase 3: Verifica (5 minuti)
 
-   # Salva risultato query 3
-   col3 = db["query_3_results"]
-   col3.delete_many({})
-   col3.insert_many([row.asDict() for row in q3.collect()])
-   print(f"Query 3: {col3.count_documents({})} documenti salvati")
+```python
+print(len(t1), len(t2))
+print(t1.all()[:3])
+print(t2.all()[:3])
+```
 
-   client.close()
-   ```
+### Fase 4: Scrivi il riepilogo finale (5 minuti)
 
-### Fase 3: Verifica in MongoDB (5 minuti)
+Aggiungi una cella Markdown con:
 
-5. **In `mongosh`:**
-
-   ```javascript
-   use mini_project
-   show collections
-
-   // Verifica un risultato
-   db.query_1_results.findOne()
-   db.query_1_results.countDocuments()
-   ```
-
-### Fase 4: Prepara la presentazione (10 minuti)
-
-6. **Aggiungi una cella Markdown al notebook con il riepilogo:**
-
-   ```markdown
-   # Risultati Mini-Progetto
-
-   ## Dataset: [nome]
-
-   ## Tema: [titolo]
-
-   ### Domanda 1: [domanda]
-
-   **Risposta:** [1-2 frasi che riassumono il risultato]
-
-   ### Domanda 2: [domanda]
-
-   **Risposta:** [1-2 frasi]
-
-   ### Domanda 3: [domanda]
-
-   **Risposta:** [1-2 frasi]
-
-   ### Pipeline utilizzata
-
-   1. Ingestione: caricamento CSV → [N] righe
-   2. Pulizia: dropna + dropDuplicates → [N] righe
-   3. Analisi: 3 query Spark SQL (groupBy, window function, ...)
-   4. Storage: 3 collezioni MongoDB con [N] documenti totali
-
-   ### Conclusioni
-
-   [2-3 frasi sulle scoperte principali]
-   ```
-
-7. **Salva il notebook** - è il tuo deliverable per la valutazione!
+- domande
+- risposte brevi
+- righe iniziali e righe pulite
+- output salvati in Parquet e TinyDB
+- conclusione finale
 
 ## Output atteso
 
-- 3 query completate con risultati
-- Risultati salvati in MongoDB (3 collezioni)
-- Cella Markdown con riepilogo e conclusioni
-- Notebook pronto per la presentazione
+- Query completate
+- Output salvati
+- TinyDB verificato
+- Riepilogo finale scritto
 
 ## Checkpoint
 
-- [ ] Query 2 completata e funzionante
-- [ ] Query 3 completata (con tecnica avanzata)
-- [ ] Risultati salvati in MongoDB (3 collezioni)
-- [ ] Verifica in mongosh OK
-- [ ] Cella riepilogativa scritta con risposte
-- [ ] Notebook salvato e pronto
-
-## Valutazione
-
-Il mini-progetto sarà valutato su:
-
-| Criterio                                                | Peso |
-| ------------------------------------------------------- | ---- |
-| Pipeline funzionante (ingest → clean → analyse → store) | 40%  |
-| Query corrette e risposta alle domande                  | 30%  |
-| Documentazione e chiarezza del notebook                 | 20%  |
-| Presentazione orale (Lab 27)                            | 10%  |
-
-## Cleanup
-
-```javascript
-// Da fare solo DOPO la presentazione (Lab 27)!
-use mini_project
-db.dropDatabase()
-```
-
-```python
-spark.stop()
-```
+- [ ] Almeno 2 query completate
+- [ ] Parquet scritto
+- [ ] TinyDB popolato
+- [ ] Risultati verificati
+- [ ] Conclusioni scritte

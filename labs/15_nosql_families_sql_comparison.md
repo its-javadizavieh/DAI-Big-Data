@@ -1,62 +1,61 @@
-# Lab 15 - Famiglie NoSQL e confronto con SQL
+# Lab 15 - Famiglie NoSQL, confronto con SQL, e introduzione a TinyDB
 
 ## Obiettivo
 
-Classificare scenari reali per tipo di database ideale, progettare schemi documentali e confrontare approcci SQL vs NoSQL.
+Capire le 4 famiglie NoSQL e spiegare perché in questo corso useremo **TinyDB** come primo database documentale pratico.
 
-## Durata (timebox)
+## Durata
 
 30 minuti
 
 ## Prerequisiti
 
-- Conoscenza base di SQL (SELECT, JOIN, CREATE TABLE)
-- Slide della lezione 15
-
-## Scenario
-
-Sei consulente IT e devi consigliare al cliente quale database usare per 4 servizi diversi.
+- Lezione 15 letta
+- Conoscenze base di Python
 
 ## Step
 
-1. **Classifica i servizi**: per ognuno dei seguenti scenari, indica il tipo di database ideale (SQL, Document, KV, Column-family, Graph) e motiva la scelta.
-   - a) Sistema bancario per trasferimenti di denaro
-   - b) Social network con relazioni amici-di-amici
-   - c) Catalogo e-commerce con prodotti eterogenei
-   - d) Cache per sessioni utente con TTL (Time-To-Live)
-   - e) Dati IoT da 10.000 sensori con letture ogni secondo
+### Fase 1: Classifica gli scenari (10 minuti)
 
-2. **Progetta uno schema documentale**: per il catalogo e-commerce (scenario c), crea 3 documenti JSON di esempio per prodotti di categorie diverse (elettronica, abbigliamento, alimentari).
+Per ogni scenario, scegli la famiglia NoSQL più adatta:
 
-3. **Confronto SQL vs NoSQL**: per lo scenario c, scrivi come modelleresti lo stesso dato in SQL (tabelle, relazioni) e in MongoDB (documenti). Evidenzia pro e contro di ciascun approccio.
+1. Sessioni utente di un sito web
+2. Catalogo prodotti con attributi diversi per ogni prodotto
+3. Log di sensori scritti in grandi volumi
+4. Rete sociale con relazioni tra utenti
 
-4. **Polyglot persistence**: disegna un'architettura che usa almeno 3 tipi di database diversi per un'applicazione e-commerce completa.
+Scrivi le risposte nel tuo notebook o in un file Markdown.
+
+### Fase 2: Confronto SQL vs documenti (10 minuti)
+
+Considera questo scenario:
+
+- Un negozio vende laptop, magliette e libri
+- Ogni tipo di prodotto ha campi diversi
+
+Scrivi in 4-6 righe:
+
+- come modelleresti i dati in SQL
+- come modelleresti i dati in un database documentale
+- perché per questo scenario un documento è più semplice
+
+### Fase 3: Perché TinyDB? (10 minuti)
+
+Rispondi a queste domande:
+
+1. Perché TinyDB è più semplice di MongoDB per studenti principianti?
+2. Quale comando serve per installarlo?
+3. In quali casi TinyDB NON sarebbe sufficiente?
 
 ## Output atteso
 
-- Tabella classificazione: servizio | tipo DB | motivazione
-- 3 documenti JSON di esempio
-- Confronto SQL/NoSQL per lo scenario e-commerce
-- Schema architetturale polyglot persistence
+- 4 scenari classificati correttamente
+- Mini confronto SQL vs documenti
+- Spiegazione breve del perché TinyDB è adatto al corso
 
 ## Checkpoint
 
-- [ ] Tutti e 5 i servizi classificati con motivazione
-- [ ] I 3 documenti JSON sono validi e realistici
-- [ ] Il confronto SQL/NoSQL ha almeno 3 pro e 3 contro per lato
-- [ ] L'architettura polyglot usa almeno 3 database diversi
-
-## Troubleshooting rapido
-
-- Se non sai quale database scegliere: chiediti "Serve scalabilità o consistenza? Schema fisso o flessibile?"
-- Se il JSON non è valido: usa un validator online (jsonlint.com)
-
-## Cleanup obbligatorio
-
-- Nessun cleanup richiesto (lab teorico/progettuale)
-
-## Parole chiave Google (screenshot/guide)
-
-- "nosql database types comparison chart"
-- "mongodb document schema design"
-- "polyglot persistence architecture example"
+- [ ] 4 famiglie NoSQL riconosciute
+- [ ] Scenario catalogo collegato ai document store
+- [ ] `pip install tinydb` citato correttamente
+- [ ] Almeno 1 limite di TinyDB indicato

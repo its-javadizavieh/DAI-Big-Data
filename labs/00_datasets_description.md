@@ -90,18 +90,19 @@ calcio_df = spark.read.csv("serie_a_coppa_italia_2015_2023.csv", header=True, in
 vendite_df = spark.read.csv("superstore_sales.csv", header=True, inferSchema=True)
 ```
 
-## Come caricare i dataset in MongoDB (con Python)
+## Come salvare i dataset in TinyDB (con Python)
 
 ```python
 import csv
-from pymongo import MongoClient
+from tinydb import TinyDB
 
-client = MongoClient("mongodb://localhost:27017/")
-db = client["bigdata_course"]
+db = TinyDB("bigdata_course.json")
+table = db.table("superstore")
+table.truncate()
 
-# Carica un CSV in MongoDB
+# Carica un CSV in TinyDB
 with open("superstore_sales.csv", "r") as f:
     reader = csv.DictReader(f)
     docs = list(reader)
-    db["superstore"].insert_many(docs)
+    table.insert_multiple(docs)
 ```

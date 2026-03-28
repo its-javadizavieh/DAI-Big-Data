@@ -61,6 +61,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
 4. **Seleziona le colonne utili e pulisci:**
 
    **Serie A:**
+
    ```python
    cols = ["Competition_Name", "Season_End_Year", "Date", "Home", "Away",
            "HomeGoals", "AwayGoals", "Referee"]
@@ -77,6 +78,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    ```
 
    **Superstore:**
+
    ```python
    cols = ["Order Date", "Region", "Category", "Sub-Category", "Product Name", "Sales"]
    df_selected = df_raw.select([col(c) for c in cols])
@@ -95,6 +97,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
 5. **Aggiungi colonne derivate:**
 
    **Serie A:**
+
    ```python
    df_transformed = (df_clean
        .withColumn("total_goals", col("HomeGoals") + col("AwayGoals"))
@@ -109,6 +112,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    ```
 
    **Superstore:**
+
    ```python
    df_transformed = (df_clean
        .withColumn("year", year(col("order_date")))
@@ -132,6 +136,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    **Query 1 - Aggregazione per anno:**
 
    **Serie A:**
+
    ```python
    q1 = spark.sql("""
        SELECT year, COUNT(*) AS matches,
@@ -145,6 +150,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    ```
 
    **Superstore:**
+
    ```python
    q1 = spark.sql("""
        SELECT year, COUNT(*) AS orders,
