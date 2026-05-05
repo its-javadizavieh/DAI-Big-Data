@@ -34,13 +34,16 @@ db = TinyDB("serie_a_db.json")
 partite = db.table("partite")
 partite.truncate()
 
-partite.insert_multiple([
+# Inserisci queste 5 partite usando insert_multiple:
+data = [
     {"home": "Juventus", "away": "Roma", "homeGoals": 3, "awayGoals": 1, "city": "Torino"},
     {"home": "Milan", "away": "Inter", "homeGoals": 1, "awayGoals": 2, "city": "Milano"},
     {"home": "Napoli", "away": "Lazio", "homeGoals": 2, "awayGoals": 0, "city": "Napoli"},
     {"home": "Fiorentina", "away": "Atalanta", "homeGoals": 0, "awayGoals": 0, "city": "Firenze"},
     {"home": "Torino", "away": "Bologna", "homeGoals": 4, "awayGoals": 2, "city": "Torino"}
-])
+]
+
+# Scrivi qui il tuo codice per inserire i dati
 ```
 
 ### Fase 3: Read (7 minuti)
@@ -48,21 +51,30 @@ partite.insert_multiple([
 ```python
 Match = Query()
 
-print(partite.all())
-print(partite.search(Match.homeGoals > 2))
-print(partite.search(Match.city == "Torino"))
-print(partite.get(Match.home == "Napoli"))
+# Scrivi le query per:
+# 1. Stampare tutti i documenti nella tabella
+# 2. Cercare le partite con homeGoals > 2
+# 3. Cercare le partite giocate a "Torino"
+# 4. Ottenere la partita del Napoli in casa (usa .get())
+
+# Scrivi qui il tuo codice
 ```
+
+**Suggerimento**: usa `partite.all()`, `partite.search(Match.campo == valore)`, `partite.get()`.
 
 ### Fase 4: Update e Delete (8 minuti)
 
 ```python
-partite.update({"competition": "Serie A"}, Match.home == "Juventus")
-partite.update({"draw": True}, (Match.homeGoals == Match.awayGoals))
-partite.remove(Match.away == "Atalanta")
+# Scrivi il codice per:
+# 1. Aggiungere il campo "competition": "Serie A" alla partita della Juventus
+# 2. Aggiungere il campo "draw": True alle partite in pareggio (homeGoals == awayGoals)
+# 3. Rimuovere la partita con away == "Atalanta"
+# 4. Stampare il conteggio finale dei documenti
 
-print(f"Documenti finali: {len(partite)}")
+# Scrivi qui il tuo codice
 ```
+
+**Suggerimento**: usa `partite.update({campo: valore}, condizione)` e `partite.remove(condizione)`.
 
 ## Output atteso
 

@@ -42,6 +42,11 @@ Sei un data analyst in un'azienda di e-commerce. Il tuo manager vuole un report 
 
    **Prova tu**: seleziona `Customer Name`, `City` e `Category`. Scrivi il codice e verifica.
 
+   ```python
+   # Scrivi qui il tuo codice
+   df.select(___).show(5)
+   ```
+
 3. **filter() - Filtra le righe**: trova gli ordini con vendite sopra 500.
 
    ```python
@@ -53,12 +58,12 @@ Sei un data analyst in un'azienda di e-commerce. Il tuo manager vuole un report 
    **Prova tu** - filtro con 2 condizioni: trova ordini di `Technology` con vendite sopra 100.
 
    ```python
-   # Completa tu:
-   risultato = df.filter((col("Category") == "Technology") & (col("Sales") > 100))
+   # Scrivi qui il tuo codice
+   risultato = df.filter(___)
    risultato.show(5)
    ```
 
-   **Attenzione**: usa `&` (non `and`) e metti le parentesi attorno a ogni condizione!
+   **Suggerimento**: usa `&` (non `and`) e metti le parentesi attorno a ogni condizione!
 
 4. **withColumn() - Aggiungi una colonna calcolata**: calcola le vendite con tassa del 10%.
 
@@ -75,9 +80,12 @@ Sei un data analyst in un'azienda di e-commerce. Il tuo manager vuole un report 
    **Prova tu**: aggiungi una colonna `High_Value` che è `True` se Sales >= 100, `False` altrimenti.
 
    ```python
-   df3 = df2.withColumn("High_Value", col("Sales") >= 100)
+   # Scrivi qui il tuo codice
+   df3 = df2.withColumn("High_Value", ___)
    df3.select("Customer Name", "Sales", "High_Value").show(5)
    ```
+
+   **Suggerimento**: puoi confrontare una colonna direttamente con un valore (`col("X") >= N`).
 
 5. **withColumn() con testo**: crea una colonna con la città in maiuscolo.
 
@@ -110,8 +118,11 @@ Sei un data analyst in un'azienda di e-commerce. Il tuo manager vuole un report 
    **Prova tu**: ordina per `Category` (A-Z) e poi per `Sales` (decrescente).
 
    ```python
-   df.orderBy("Category", col("Sales").desc()).show(5)
+   # Scrivi qui il tuo codice
+   df.orderBy(___).show(5)
    ```
+
+   **Suggerimento**: `orderBy` accetta piu' colonne separate da virgola. Usa `.desc()` per l'ordine decrescente.
 
 9. **Chain - Concatena tutto in un'unica espressione**:
 

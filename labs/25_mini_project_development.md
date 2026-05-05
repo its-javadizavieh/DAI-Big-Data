@@ -37,29 +37,27 @@ FROM project_data
 
 ### Fase 2: Salva i risultati (10 minuti)
 
+Salva i risultati delle tue query in Parquet e TinyDB.
+
 ```python
-q1.write.mode("overwrite").parquet("output/query1.parquet")
-q2.write.mode("overwrite").parquet("output/query2.parquet")
+# 1. Salva q1 e q2 in Parquet (mode="overwrite")
+#    Percorsi: "output/query1.parquet", "output/query2.parquet"
 
-from tinydb import TinyDB
+# 2. Salva in TinyDB:
+#    - Crea un database "mini_project_results.json"
+#    - Crea 2 tabelle: "query1_results" e "query2_results"
+#    - Svuota le tabelle e inserisci i risultati
+#    Suggerimento: usa [row.asDict() for row in q1.collect()]
 
-db = TinyDB("mini_project_results.json")
-t1 = db.table("query1_results")
-t2 = db.table("query2_results")
-
-t1.truncate()
-t2.truncate()
-
-t1.insert_multiple([row.asDict() for row in q1.collect()])
-t2.insert_multiple([row.asDict() for row in q2.collect()])
+# Scrivi qui il tuo codice
 ```
 
 ### Fase 3: Verifica (5 minuti)
 
+Stampa il conteggio documenti e i primi 3 risultati per ogni tabella TinyDB.
+
 ```python
-print(len(t1), len(t2))
-print(t1.all()[:3])
-print(t2.all()[:3])
+# Scrivi qui il tuo codice di verifica
 ```
 
 ### Fase 4: Scrivi il riepilogo finale (5 minuti)

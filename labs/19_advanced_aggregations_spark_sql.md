@@ -53,6 +53,8 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
 
 3. **Trova le top 3 sotto-categorie per vendite in ogni categoria:**
 
+   Usa una subquery con `DENSE_RANK() OVER (PARTITION BY ... ORDER BY ...)` per rankare le sotto-categorie per vendite totali all'interno di ogni categoria, poi filtra solo rank <= 3.
+
    ```python
    top_n = spark.sql("""
        SELECT category, sub_category, total_sales, rank_pos
@@ -62,19 +64,21 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
                `Sub-Category` AS sub_category,
                ROUND(SUM(Sales), 2) AS total_sales,
                DENSE_RANK() OVER (
-                   PARTITION BY Category
-                   ORDER BY SUM(Sales) DESC
+                   PARTITION BY ___
+                   ORDER BY ___
                ) AS rank_pos
            FROM sales
-           GROUP BY Category, `Sub-Category`
+           GROUP BY ___
        )
-       WHERE rank_pos <= 3
+       WHERE ___
        ORDER BY category, rank_pos
    """)
 
    print("Top 3 sotto-categorie per categoria:")
    top_n.show(12)
    ```
+
+   **Suggerimento**: `PARTITION BY Category` e `ORDER BY SUM(Sales) DESC`.
 
 ### Fase 3: Andamento mese su mese con LAG (8 minuti)
 
@@ -96,13 +100,16 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
 
 5. **Aggiungi il mese precedente con LAG:**
 
-   ```python
-   w = Window.partitionBy("Region").orderBy("order_year", "order_month")
+   Usa `Window.partitionBy("Region").orderBy("order_year", "order_month")` e la funzione `lag` per calcolare la differenza rispetto al mese precedente.
 
-   mom = (monthly
-       .withColumn("prev_month_sales", lag("monthly_sales", 1).over(w))
+   ```python
+   w = Window.partitionBy(___).orderBy(___)
+
+   mom = (
+       monthly
+       .withColumn("prev_month_sales", lag(___, ___).over(w))
        .withColumn("change", spark_round(
-           col("monthly_sales") - col("prev_month_sales"), 2
+           ___, 2
        ))
    )
 
@@ -110,27 +117,35 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
    mom.filter(col("Region") == "South").show(10)
    ```
 
+   **Suggerimento**: `lag("monthly_sales", 1)` prende il valore precedente. La differenza e' `monthly_sales - prev_month_sales`.
+
 ### Fase 4: Running total (5 minuti)
 
 6. **Calcola il totale cumulativo delle vendite per regione:**
 
+   Crea una window con `partitionBy("Region")`, `orderBy("order_year", "order_month")` e `rowsBetween(Window.unboundedPreceding, Window.currentRow)` per calcolare la somma cumulativa.
+
    ```python
-   w_cum = Window.partitionBy("Region") \
-       .orderBy("order_year", "order_month") \
-       .rowsBetween(Window.unboundedPreceding, Window.currentRow)
+   w_cum = Window.partitionBy(___) \
+       .orderBy(___) \
+       .rowsBetween(___, ___)
 
    running = monthly.withColumn(
        "cumulative_sales",
-       spark_round(sum("monthly_sales").over(w_cum), 2)
+       # Scrivi qui il tuo codice: sum cumulativa di monthly_sales
    )
 
    print("Running total vendite per regione:")
    running.filter(col("Region") == "East").show(10)
    ```
 
+   **Suggerimento**: `spark_round(sum("monthly_sales").over(w_cum), 2)`.
+
 ### Fase 5: ROLLUP - Subtotali (4 minuti)
 
 7. **Crea subtotali per regione e stato:**
+
+   Usa `GROUP BY ROLLUP(Region, State)` per generare subtotali automatici. Le righe con null nel risultato rappresentano i subtotali.
 
    ```python
    rollup_result = spark.sql("""
@@ -140,7 +155,7 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
            ROUND(SUM(Sales), 2) AS total_sales,
            COUNT(*) AS num_orders
        FROM sales
-       GROUP BY ROLLUP(Region, State)
+       GROUP BY ___
        ORDER BY Region, State
    """)
 
@@ -148,6 +163,8 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
    rollup_result.show(15)
    print(f"Righe ROLLUP: {rollup_result.count()}")
    ```
+
+   **Suggerimento**: sostituisci `___` con `ROLLUP(Region, State)`.
 
 ## Output atteso
 

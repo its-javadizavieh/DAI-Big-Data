@@ -61,36 +61,43 @@ Condurre un'analisi esplorativa (EDA) completa sul dataset di calcio italiano, r
 
 4. **Media gol per stagione:**
 
+   Registra la vista e calcola, per ogni stagione di Serie A, la media gol per partita, il totale gol e il numero di partite.
+
    ```python
    df.createOrReplaceTempView("matches")
 
    gol_per_stagione = spark.sql("""
        SELECT
-           Season_End_Year AS stagione,
-           ROUND(AVG(HomeGoals + AwayGoals), 2) AS media_gol_partita,
-           SUM(HomeGoals + AwayGoals) AS gol_totali,
+           ___ AS stagione,
+           ROUND(AVG(___), 2) AS media_gol_partita,
+           SUM(___) AS gol_totali,
            COUNT(*) AS partite
        FROM matches
-       WHERE Competition_Name = 'Serie A'
-       GROUP BY Season_End_Year
-       ORDER BY Season_End_Year
+       WHERE ___
+       GROUP BY ___
+       ORDER BY ___
    """)
    print("Media gol per stagione (Serie A):")
    gol_per_stagione.show()
    ```
 
+   **Suggerimento**: i gol totali di una partita sono `HomeGoals + AwayGoals`. Filtra per `Competition_Name = 'Serie A'`.
+
 5. **Classifica vittorie in casa (tutte le stagioni):**
+
+   Trova le top 10 squadre per vittorie in casa in Serie A (tutte le stagioni). Una vittoria in casa si ha quando `HomeGoals > AwayGoals`.
 
    ```python
    vittorie_casa = spark.sql("""
+       -- Scrivi la query: top 10 squadre per vittorie in casa
+       -- Colonne: squadra, vittorie_casa
+       -- Filtra: Serie A, HomeGoals > AwayGoals
        SELECT
-           Home AS squadra,
-           COUNT(*) AS vittorie_casa
+           ___
        FROM matches
-       WHERE Competition_Name = 'Serie A'
-         AND HomeGoals > AwayGoals
-       GROUP BY Home
-       ORDER BY vittorie_casa DESC
+       WHERE ___
+       GROUP BY ___
+       ORDER BY ___
        LIMIT 10
    """)
    print("Top 10 vittorie in casa (Serie A totale):")
@@ -101,18 +108,19 @@ Condurre un'analisi esplorativa (EDA) completa sul dataset di calcio italiano, r
 
 6. **Squadre più indisciplinate (cartellini gialli + rossi):**
 
+   Trova le 10 squadre con piu' cartellini totali (gialli + rossi) nelle partite in casa, in Serie A.
+
    ```python
    disciplina = spark.sql("""
+       -- Scrivi la query: top 10 squadre per cartellini in casa
+       -- Colonne: squadra, gialli, rossi, totale_cartellini, partite_casa
+       -- Usa SUM su yellow_cards_home, red_cards_home
        SELECT
-           Home AS squadra,
-           SUM(yellow_cards_home) AS gialli,
-           SUM(red_cards_home) AS rossi,
-           SUM(yellow_cards_home + red_cards_home) AS totale_cartellini,
-           COUNT(*) AS partite_casa
+           ___
        FROM matches
-       WHERE Competition_Name = 'Serie A'
-       GROUP BY Home
-       ORDER BY totale_cartellini DESC
+       WHERE ___
+       GROUP BY ___
+       ORDER BY ___
        LIMIT 10
    """)
    print("Top 10 squadre per cartellini (in casa):")
@@ -121,21 +129,23 @@ Condurre un'analisi esplorativa (EDA) completa sul dataset di calcio italiano, r
 
 7. **Arbitri che danno più cartellini rossi:**
 
+   Trova i 10 arbitri con piu' espulsioni totali (rossi casa + trasferta) in Serie A, ma solo quelli che hanno arbitrato almeno 20 partite.
+
    ```python
    arbitri = spark.sql("""
+       -- Scrivi la query: top 10 arbitri per cartellini rossi
+       -- Colonne: arbitro, rossi_totali, partite_arbitrate
+       -- Filtra: Serie A, Referee non null, HAVING > 20 partite
        SELECT
-           Referee AS arbitro,
-           SUM(red_cards_home + red_cards_away) AS rossi_totali,
-           COUNT(*) AS partite_arbitrate
+           ___
        FROM matches
-       WHERE Competition_Name = 'Serie A'
-         AND Referee IS NOT NULL
-       GROUP BY Referee
-       HAVING COUNT(*) > 20
-       ORDER BY rossi_totali DESC
+       WHERE ___
+       GROUP BY ___
+       HAVING ___
+       ORDER BY ___
        LIMIT 10
    """)
-   print("Arbitri con più espulsioni (min 20 partite):")
+   print("Arbitri con piu' espulsioni (min 20 partite):")
    arbitri.show()
    ```
 
@@ -143,24 +153,26 @@ Condurre un'analisi esplorativa (EDA) completa sul dataset di calcio italiano, r
 
 8. **Fattore campo: vittorie casa vs trasferta vs pareggi:**
 
+   Per ogni stagione di Serie A, calcola: partite totali, vittorie casa, vittorie trasferta, pareggi, e la percentuale di vittorie in casa.
+
    ```python
    fattore = spark.sql("""
+       -- Scrivi la query: fattore campo per stagione
+       -- Colonne: stagione, partite, vittorie_casa, vittorie_trasferta, pareggi, pct_vittorie_casa
+       -- Usa CASE WHEN per contare i risultati
+       -- pct = 100.0 * vittorie_casa / partite
        SELECT
-           Season_End_Year AS stagione,
-           COUNT(*) AS partite,
-           SUM(CASE WHEN HomeGoals > AwayGoals THEN 1 ELSE 0 END) AS vittorie_casa,
-           SUM(CASE WHEN HomeGoals < AwayGoals THEN 1 ELSE 0 END) AS vittorie_trasferta,
-           SUM(CASE WHEN HomeGoals = AwayGoals THEN 1 ELSE 0 END) AS pareggi,
-           ROUND(100.0 * SUM(CASE WHEN HomeGoals > AwayGoals THEN 1 ELSE 0 END)
-                 / COUNT(*), 1) AS pct_vittorie_casa
+           ___
        FROM matches
-       WHERE Competition_Name = 'Serie A'
-       GROUP BY Season_End_Year
-       ORDER BY Season_End_Year
+       WHERE ___
+       GROUP BY ___
+       ORDER BY ___
    """)
    print("Fattore campo per stagione:")
    fattore.show()
    ```
+
+   **Suggerimento**: usa `SUM(CASE WHEN HomeGoals > AwayGoals THEN 1 ELSE 0 END)` per contare le vittorie.
 
 9. **Rispondi a queste domande (scrivi le risposte):**
    - In quale stagione il fattore campo è stato più forte?

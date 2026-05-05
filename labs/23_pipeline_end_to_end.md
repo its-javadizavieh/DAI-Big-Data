@@ -33,66 +33,87 @@ print(f"Righe caricate: {raw.count()}")
 
 ### Fase 2: Pulizia (5 minuti)
 
+Pulisci il DataFrame:
+
+1. Rimuovi duplicati
+2. Rimuovi righe senza `Order ID` o `Sales`
+3. Converti `Order Date` in tipo data (formato `dd/MM/yyyy`) e crea la colonna `order_date`
+4. Estrai l'anno in una colonna `order_year`
+
 ```python
 clean = (
     raw
-    .dropDuplicates()
-    .dropna(subset=["Order ID", "Sales"])
-    .withColumn("order_date", to_date(col("Order Date"), "dd/MM/yyyy"))
-    .withColumn("order_year", year(col("order_date")))
+    # Scrivi qui il tuo codice di pulizia
 )
 ```
+
+**Suggerimento**: usa `dropDuplicates()`, `dropna(subset=[...])`, `withColumn` + `to_date`, `year()`.
 
 ### Fase 3: Analisi con Spark SQL (10 minuti)
 
 ```python
 clean.createOrReplaceTempView("orders")
+```
 
+**Query 1**: Per ogni regione e anno, calcola le vendite totali e il numero di ordini. Ordina per regione e anno.
+
+```python
 q1 = spark.sql("""
-    SELECT Region, order_year,
-           ROUND(SUM(Sales), 2) AS total_sales,
-           COUNT(*) AS num_orders
+    -- Scrivi la query: vendite per regione e anno
+    -- Colonne: Region, order_year, total_sales, num_orders
+    SELECT
+        ___
     FROM orders
-    GROUP BY Region, order_year
-    ORDER BY Region, order_year
+    GROUP BY ___
+    ORDER BY ___
 """)
+q1.show()
+```
 
+**Query 2**: Trova i top 5 clienti per spesa totale.
+
+```python
 q2 = spark.sql("""
-    SELECT `Customer Name` AS customer,
-           ROUND(SUM(Sales), 2) AS total_spent
+    -- Scrivi la query: top 5 clienti per spesa
+    -- Colonne: customer, total_spent
+    SELECT
+        ___
     FROM orders
-    GROUP BY `Customer Name`
-    ORDER BY total_spent DESC
+    GROUP BY ___
+    ORDER BY ___
     LIMIT 5
 """)
-
-q1.show()
 q2.show()
 ```
 
 ### Fase 4: Salva i risultati (5 minuti)
 
+Salva i risultati delle due query in TinyDB, in due tabelle separate: `sales_by_region` e `top_customers`.
+
 ```python
 from tinydb import TinyDB
 
 db = TinyDB("pipeline_results.json")
-region_table = db.table("sales_by_region")
-customer_table = db.table("top_customers")
 
-region_table.truncate()
-customer_table.truncate()
+# 1. Crea le tabelle "sales_by_region" e "top_customers"
+# 2. Svuota le tabelle (truncate)
+# 3. Inserisci i risultati di q1 e q2
+# Suggerimento: usa [row.asDict() for row in q1.collect()]
 
-region_table.insert_multiple([row.asDict() for row in q1.collect()])
-customer_table.insert_multiple([row.asDict() for row in q2.collect()])
+# Scrivi qui il tuo codice
 ```
 
 ### Fase 5: Verifica (5 minuti)
 
+Verifica che i conteggi Spark e TinyDB corrispondano.
+
 ```python
-print(f"q1 Spark rows: {q1.count()} | TinyDB docs: {len(region_table)}")
-print(f"q2 Spark rows: {q2.count()} | TinyDB docs: {len(customer_table)}")
-print(region_table.all()[:3])
-print(customer_table.all())
+# Stampa:
+# 1. Numero di righe q1 (Spark) vs documenti nella tabella region
+# 2. Numero di righe q2 (Spark) vs documenti nella tabella customers
+# 3. I primi 3 documenti di ogni tabella
+
+# Scrivi qui il tuo codice
 ```
 
 ## Output atteso

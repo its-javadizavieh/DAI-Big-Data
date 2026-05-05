@@ -63,16 +63,18 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    **Serie A:**
 
    ```python
+   # Seleziona queste colonne:
    cols = ["Competition_Name", "Season_End_Year", "Date", "Home", "Away",
            "HomeGoals", "AwayGoals", "Referee"]
    df_selected = df_raw.select(cols)
 
-   # Fix date + remove nulls
-   df_clean = (df_selected
-       .withColumn("match_date", to_date(col("Date"), "M/d/yyyy"))
-       .drop("Date")
-       .dropna(subset=["Home", "Away", "HomeGoals", "AwayGoals"])
-       .dropDuplicates()
+   # Scrivi il codice di pulizia:
+   # 1. Converti "Date" in data (formato "M/d/yyyy") e rinomina in "match_date"
+   # 2. Rimuovi le righe senza Home, Away, HomeGoals, AwayGoals
+   # 3. Rimuovi duplicati
+   df_clean = (
+       df_selected
+       # Scrivi qui il tuo codice
    )
    print(f"Righe pulite: {df_clean.count()}")
    ```
@@ -83,14 +85,18 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    cols = ["Order Date", "Region", "Category", "Sub-Category", "Product Name", "Sales"]
    df_selected = df_raw.select([col(c) for c in cols])
 
-   df_clean = (df_selected
-       .withColumn("order_date", to_date(col("`Order Date`"), "dd/MM/yyyy"))
-       .drop("Order Date")
-       .dropna(subset=["Sales", "Category"])
-       .dropDuplicates()
+   # Scrivi il codice di pulizia:
+   # 1. Converti "Order Date" in data (formato "dd/MM/yyyy") e rinomina in "order_date"
+   # 2. Rimuovi righe senza Sales o Category
+   # 3. Rimuovi duplicati
+   df_clean = (
+       df_selected
+       # Scrivi qui il tuo codice
    )
    print(f"Righe pulite: {df_clean.count()}")
    ```
+
+   **Suggerimento**: usa `withColumn` + `to_date`, `dropna(subset=[...])`, `dropDuplicates()`.
 
 ### Fase 3: Trasformazione (5 minuti)
 
@@ -99,14 +105,13 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    **Serie A:**
 
    ```python
-   df_transformed = (df_clean
-       .withColumn("total_goals", col("HomeGoals") + col("AwayGoals"))
-       .withColumn("result",
-           when(col("HomeGoals") > col("AwayGoals"), "home_win")
-           .when(col("HomeGoals") < col("AwayGoals"), "away_win")
-           .otherwise("draw"))
-       .withColumn("year", year(col("match_date")))
-       .withColumn("month", month(col("match_date")))
+   # Aggiungi queste colonne:
+   # - "total_goals": somma HomeGoals + AwayGoals
+   # - "result": "home_win" se HomeGoals > AwayGoals, "away_win" se <, "draw" altrimenti
+   # - "year" e "month" estratti da match_date
+   df_transformed = (
+       df_clean
+       # Scrivi qui il tuo codice
    )
    df_transformed.show(5)
    ```
@@ -114,16 +119,17 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    **Superstore:**
 
    ```python
-   df_transformed = (df_clean
-       .withColumn("year", year(col("order_date")))
-       .withColumn("month", month(col("order_date")))
-       .withColumn("sales_level",
-           when(col("Sales") > 1000, "high")
-           .when(col("Sales") > 100, "medium")
-           .otherwise("low"))
+   # Aggiungi queste colonne:
+   # - "year" e "month" estratti da order_date
+   # - "sales_level": "high" se Sales > 1000, "medium" se > 100, "low" altrimenti
+   df_transformed = (
+       df_clean
+       # Scrivi qui il tuo codice
    )
    df_transformed.show(5)
    ```
+
+   **Suggerimento**: usa `withColumn`, `when().when().otherwise()`, `year()`, `month()`.
 
 ### Fase 4: Analisi con Spark SQL (10 minuti)
 
@@ -138,12 +144,14 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    **Serie A:**
 
    ```python
+   # Scrivi una query che calcola per ogni anno:
+   # - numero di partite
+   # - media gol per partita (arrotondato a 2 decimali)
    q1 = spark.sql("""
-       SELECT year, COUNT(*) AS matches,
-              ROUND(AVG(total_goals), 2) AS avg_goals
+       SELECT ___
        FROM pipeline_data
-       GROUP BY year
-       ORDER BY year
+       GROUP BY ___
+       ORDER BY ___
    """)
    print("Query 1: Media gol per anno")
    q1.show()
@@ -152,12 +160,14 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    **Superstore:**
 
    ```python
+   # Scrivi una query che calcola per ogni anno:
+   # - numero di ordini
+   # - vendite totali (arrotondato a 2 decimali)
    q1 = spark.sql("""
-       SELECT year, COUNT(*) AS orders,
-              ROUND(SUM(Sales), 2) AS total_sales
+       SELECT ___
        FROM pipeline_data
-       GROUP BY year
-       ORDER BY year
+       GROUP BY ___
+       ORDER BY ___
    """)
    print("Query 1: Vendite totali per anno")
    q1.show()

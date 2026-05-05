@@ -18,11 +18,11 @@ Sostenere la verifica finale del corso sulle lezioni 15-25: famiglie NoSQL, Tiny
 
 ## Valutazione
 
-| Sezione | Peso |
-| --- | --- |
-| Parte A - Teoria | 30% |
-| Parte B1 - TinyDB pratico | 35% |
-| Parte B2 - Pipeline E2E | 35% |
+| Sezione                   | Peso |
+| ------------------------- | ---- |
+| Parte A - Teoria          | 30%  |
+| Parte B1 - TinyDB pratico | 35%  |
+| Parte B2 - Pipeline E2E   | 35%  |
 
 ## Struttura della prova
 

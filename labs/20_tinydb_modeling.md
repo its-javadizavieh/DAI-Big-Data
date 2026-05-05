@@ -17,6 +17,9 @@ Caricare una versione semplice del dataset Serie A in TinyDB, confrontare docume
 
 ### Fase 1: Crea documenti flat (10 minuti)
 
+Carica le prime 200 righe del CSV e crea documenti flat (senza nesting) con questi campi:
+`match_id`, `competition`, `season`, `home`, `away`, `home_goals`, `away_goals`, `city`
+
 ```python
 import csv
 from tinydb import TinyDB
@@ -25,15 +28,13 @@ with open("serie_a_coppa_italia_2015_2023.csv", "r", encoding="utf-8") as f:
     reader = csv.DictReader(f)
     rows = []
     for row in reader:
+        # Crea un dizionario flat con i campi indicati sopra
+        # Converti match_id, season, home_goals, away_goals a int
+        # Usa row["ID"], row["Competition_Name"], row["Season_End_Year"],
+        # row["Home"], row["Away"], row["HomeGoals"], row["AwayGoals"],
+        # row["venue_city"]
         rows.append({
-            "match_id": int(row["ID"]),
-            "competition": row["Competition_Name"],
-            "season": int(row["Season_End_Year"]),
-            "home": row["Home"],
-            "away": row["Away"],
-            "home_goals": int(row["HomeGoals"]) if row["HomeGoals"] else 0,
-            "away_goals": int(row["AwayGoals"]) if row["AwayGoals"] else 0,
-            "city": row["venue_city"]
+            # Scrivi qui il tuo codice
         })
         if len(rows) == 200:
             break
@@ -41,21 +42,41 @@ with open("serie_a_coppa_italia_2015_2023.csv", "r", encoding="utf-8") as f:
 db = TinyDB("serie_a_tinydb.json")
 flat_table = db.table("matches_flat")
 flat_table.truncate()
-flat_table.insert_multiple(rows)
+# Inserisci i documenti
+# Scrivi qui il tuo codice
 ```
 
+**Suggerimento**: usa `int(row["HomeGoals"]) if row["HomeGoals"] else 0` per gestire i campi vuoti.
+
 ### Fase 2: Query semplici (8 minuti)
+
+Scrivi le query per:
+
+1. Cercare le partite della Juventus in casa
+2. Cercare le partite giocate a Torino
+3. Cercare le partite con piu' di 2 gol in casa
 
 ```python
 from tinydb import Query
 
 Match = Query()
-print(flat_table.search(Match.home == "Juventus")[:3])
-print(flat_table.search(Match.city == "Torino")[:3])
-print(flat_table.search(Match.home_goals > 2)[:3])
+
+# 1. Partite Juventus in casa (stampa le prime 3)
+# 2. Partite a Torino (stampa le prime 3)
+# 3. Partite con home_goals > 2 (stampa le prime 3)
+
+# Scrivi qui il tuo codice
 ```
 
+**Suggerimento**: usa `flat_table.search(Match.campo == "valore")[:3]`.
+
 ### Fase 3: Crea una versione nested (7 minuti)
+
+Usando i primi 20 documenti flat, crea una versione nested dove:
+
+- `teams` contiene `{"home": ..., "away": ...}`
+- `score` contiene `{"home": ..., "away": ...}`
+- `venue` contiene `{"city": ...}`
 
 ```python
 nested_table = db.table("matches_nested")
@@ -67,9 +88,8 @@ for r in rows[:20]:
         "match_id": r["match_id"],
         "competition": r["competition"],
         "season": r["season"],
-        "teams": {"home": r["home"], "away": r["away"]},
-        "score": {"home": r["home_goals"], "away": r["away_goals"]},
-        "venue": {"city": r["city"]}
+        # Crea i sotto-documenti "teams", "score", "venue"
+        # Scrivi qui il tuo codice
     })
 
 nested_table.insert_multiple(nested_docs)

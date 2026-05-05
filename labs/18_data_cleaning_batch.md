@@ -70,25 +70,31 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
 
 4. **Colonne critiche - rimuovi righe senza ID o squadre:**
 
+   Usa `dropna` per rimuovere le righe dove mancano `ID`, `Home` o `Away`.
+
    ```python
-   step1 = df.dropna(subset=["ID", "Home", "Away"])
+   step1 = df.dropna(subset=[___])
    print(f"Dopo dropna critici: {step1.count()} righe")
    ```
 
-5. **Colonne numeriche - riempii con 0 dove manca:**
+5. **Colonne numeriche - riempi con 0 dove manca:**
+
+   Usa `fillna` per riempire con 0 le colonne: `shots_total_home`, `shots_ongoal_home`, `yellow_cards_home`, `red_cards_home`, `fouls_home`.
 
    ```python
    numeric_cols = ["shots_total_home", "shots_ongoal_home",
                    "yellow_cards_home", "red_cards_home", "fouls_home"]
 
-   step2 = step1.fillna(0, subset=numeric_cols)
+   step2 = step1.fillna(___, subset=___)
    print(f"Dopo fillna numerici: {step2.count()} righe")
    ```
 
 6. **Colonne testo - riempi con "Sconosciuto":**
 
+   Usa `fillna` per riempire con `"Sconosciuto"` la colonna `Referee`.
+
    ```python
-   step3 = step2.fillna("Sconosciuto", subset=["Referee"])
+   step3 = step2.fillna(___, subset=[___])
    print(f"Dopo fillna testo: {step3.count()} righe")
    ```
 
@@ -96,9 +102,11 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
 
 7. **Controlla e rimuovi duplicati:**
 
+   Rimuovi i duplicati basandoti sulla colonna `ID`.
+
    ```python
    before = step3.count()
-   step4 = step3.dropDuplicates(["ID"])
+   step4 = step3.dropDuplicates([___])
    after = step4.count()
    print(f"Duplicati rimossi: {before - after}")
    ```
@@ -107,20 +115,24 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
 
 8. **Controlla valori anomali nei gol (nessuna partita ha >10 gol):**
 
+   Filtra le righe dove `HomeGoals > 10` o `AwayGoals > 10` o dove sono negativi.
+
    ```python
    anomalie = step4.filter(
-       (col("HomeGoals") > 10) | (col("AwayGoals") > 10) |
-       (col("HomeGoals") < 0) | (col("AwayGoals") < 0)
+       # Scrivi le condizioni per trovare gol anomali
+       # (> 10 o < 0 per HomeGoals e AwayGoals)
    )
    print(f"Righe con gol anomali: {anomalie.count()}")
    anomalie.show()
    ```
 
+   **Suggerimento**: usa `|` per combinare le condizioni e metti le parentesi attorno a ogni condizione.
+
 9. **Controlla che il possesso sia tra 0 e 1:**
 
    ```python
    poss_anomalie = step4.filter(
-       (col("possessiontime_home") > 1) | (col("possessiontime_home") < 0)
+       # Scrivi la condizione: possessiontime_home > 1 o < 0
    )
    print(f"Righe con possesso anomalo: {poss_anomalie.count()}")
    ```
