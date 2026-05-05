@@ -10,7 +10,7 @@ Applicare il framework delle 5V a scenari della vita quotidiana e costruire un d
 
 ## Prerequisiti
 
-- Nessun software richiesto (carta + penna oppure un semplice editor di testo)
+- Nessun software richiesto (puoi usare il [Google Doc condiviso](https://docs.google.com/document/d/1CKQtbmjI9vQEItXY7hJyeGyzBIp4KHr0m1tflm6fE1c/edit?usp=sharing))
 - Nessuna conoscenza di programmazione richiesta
 
 ## Scenario
@@ -80,11 +80,9 @@ Il tuo compito: analizzare questi dati per creare la playlist "Discover Weekly" 
 
 ## Troubleshooting rapido
 
-| Problema                          | Soluzione                                                            |
-| --------------------------------- | -------------------------------------------------------------------- |
-| Non so disegnare un diagramma     | Usa una lista con frecce → (es. "Generazione → Raccolta → ...")      |
-| Non mi viene un esempio per una V | Pensa a un'altra app che usi (TikTok, Netflix, WhatsApp) e confronta |
-| Non ho un editor                  | Carta e penna vanno benissimo per questo lab                         |
+- **Non so disegnare un diagramma**: usa una lista con frecce → (es. "Generazione → Raccolta → ...")
+- **Non mi viene un esempio per una V**: pensa a un'altra app che usi (TikTok, Netflix, WhatsApp) e confronta
+- **Non ho un editor**: usa il [Google Doc condiviso](https://docs.google.com/document/d/1CKQtbmjI9vQEItXY7hJyeGyzBIp4KHr0m1tflm6fE1c/edit?usp=sharing) oppure carta e penna
 
 ## Cleanup obbligatorio
 
