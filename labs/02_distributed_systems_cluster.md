@@ -11,7 +11,7 @@ Capire come funziona un cluster disegnando un diagramma boss-helper e simulando 
 ## Prerequisiti
 
 - Lab 01 completato (conoscenza delle 5V)
-- Editor di testo oppure carta e penna per i diagrammi
+- il [Google Doc condiviso](https://docs.google.com/document/d/1CKQtbmjI9vQEItXY7hJyeGyzBIp4KHr0m1tflm6fE1c/edit?usp=sharing)
 
 ## Scenario
 
