@@ -19,41 +19,41 @@ Hands-on laboratory exercises (Italian) covering:
 
 ### Semester 1 - Big Data Foundations & PySpark
 
-| Lab                                                | Topic                                            |
-| -------------------------------------------------- | ------------------------------------------------ |
-| [00](labs/00_datasets_description.md)              | Descrizione dei dataset                          |
-| [01](labs/01_intro_big_data_5v.md)                 | Introduzione ai Big Data e le 5V                 |
-| [02](labs/02_distributed_systems_cluster.md)       | Sistemi distribuiti: cluster, nodi, parallelismo |
-| [03](labs/03_partitioning_replication_ft.md)       | Partizionamento, replicazione, fault tolerance   |
-| [04](labs/04_hadoop_ecosystem_scalability.md)      | Da Hadoop a Spark: perché usiamo Python          |
-| [05](labs/05_setup_python_jupyter_pyspark.md)      | Setup ambiente: Python + Jupyter + PySpark       |
-| [06](labs/06_pyspark_dataframe_transformations.md) | PySpark DataFrame API: trasformazioni            |
-| [07](labs/07_pyspark_actions_lazy_eval.md)         | PySpark azioni e lazy evaluation                 |
-| [08](labs/08_pyspark_joins_aggregations.md)        | PySpark: join e aggregazioni                     |
-| [09](labs/09_spark_sql_queries_temp_views.md)      | Spark SQL: query e viste temporanee              |
-| [10](labs/10_file_formats_csv_json_parquet.md)     | Formati file: CSV, JSON, Parquet                 |
-| [11](labs/11_spark_streaming_intro.md)             | Introduzione a Spark Streaming                   |
-| [12](labs/12_exploratory_analysis.md)              | Analisi esplorativa: Serie A e Coppa Italia      |
-| [13](labs/13_batch_pipeline_practice.md)           | Batch Pipeline Practice: CSV → PySpark → Parquet |
-| [14](labs/14_midterm_exam.md)                      | Verifica intermedia (Midterm)                    |
+| Lab                                                | Topic                                                                                        |
+| -------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| [00](labs/00_datasets_description.md)              | Descrizione dei dataset                                                                      |
+| [01](labs/01_intro_big_data_5v.md)                 | Introduzione ai Big Data e le 5V                                                             |
+| [02](labs/02_distributed_systems_cluster.md)       | Sistemi distribuiti: cluster, nodi, parallelismo                                             |
+| [03](labs/03_partitioning_replication_ft.md)       | Partizionamento, replicazione, fault tolerance                                               |
+| [04](labs/04_hadoop_ecosystem_scalability.md)      | Da Hadoop a Spark: perché usiamo Python                                                      |
+| [05](labs/05_setup_python_jupyter_pyspark.md)      | Setup ambiente: Python + Jupyter + PySpark                                                   |
+| [06](labs/06_pyspark_dataframe_transformations.md) | PySpark DataFrame API: trasformazioni                                                        |
+| [07](labs/07_pyspark_actions_lazy_eval.md)         | PySpark azioni e lazy evaluation                                                             |
+| [08](labs/08_pyspark_joins_aggregations.md)        | PySpark: join e aggregazioni                                                                 |
+| [09](labs/09_spark_sql_queries_temp_views.md)      | Spark SQL: query e viste temporanee                                                          |
+| [10](labs/10_file_formats_csv_json_parquet.md)     | Formati file: CSV, JSON, Parquet                                                             |
+| [11](labs/11_spark_streaming_intro.md)             | Introduzione a Spark Streaming                                                               |
+| [12](labs/12_exploratory_analysis.md)              | Analisi esplorativa: Serie A e Coppa Italia                                                  |
+| [13](labs/13_batch_pipeline_practice.md)           | Batch Pipeline Practice: CSV → PySpark → Parquet                                             |
+| —                                                  | Verifica intermedia: quiz su portale FAD (Lezione 14) |
 
 ### Semester 2 - NoSQL, TinyDB & Pipeline
 
-| Lab                                              | Topic                                          |
-| ------------------------------------------------ | ---------------------------------------------- |
-| [15](labs/15_nosql_families_sql_comparison.md)   | Famiglie NoSQL e confronto con SQL             |
-| [16](labs/16_tinydb_crud.md)                     | TinyDB: installazione e operazioni CRUD        |
-| [17](labs/17_data_ingestion_pipeline.md)         | Pipeline di ingestion: CSV → PySpark → TinyDB  |
-| [18](labs/18_data_cleaning_batch.md)             | Pulizia dati e trasformazioni batch            |
-| [19](labs/19_advanced_aggregations_spark_sql.md) | Aggregazioni avanzate e Spark SQL              |
-| [20](labs/20_tinydb_modeling.md)                 | TinyDB: modellazione documenti                 |
-| [21](labs/21_tinydb_queries_limits.md)           | TinyDB: query, summary table e limiti          |
-| [22](labs/22_tinydb_mongodb_cap_theorem.md)      | TinyDB, MongoDB e CAP theorem                  |
-| [23](labs/23_pipeline_end_to_end.md)             | Pipeline end-to-end: CSV → PySpark → TinyDB    |
-| [24](labs/24_mini_project_design.md)             | Mini-progetto: progettazione e avvio           |
-| [25](labs/25_mini_project_development.md)        | Mini-progetto: sviluppo e completamento        |
-| [26](labs/26_final_exam.md)                      | Verifica finale                                |
-| [27](labs/27_final_review.md)                    | Correzione verifica finale e chiusura corso    |
+| Lab                                              | Topic                                         |
+| ------------------------------------------------ | --------------------------------------------- |
+| [15](labs/15_nosql_families_sql_comparison.md)   | Famiglie NoSQL e confronto con SQL            |
+| [16](labs/16_tinydb_crud.md)                     | TinyDB: installazione e operazioni CRUD       |
+| [17](labs/17_data_ingestion_pipeline.md)         | Pipeline di ingestion: CSV → PySpark → TinyDB |
+| [18](labs/18_data_cleaning_batch.md)             | Pulizia dati e trasformazioni batch           |
+| [19](labs/19_advanced_aggregations_spark_sql.md) | Aggregazioni avanzate e Spark SQL             |
+| [20](labs/20_tinydb_modeling.md)                 | TinyDB: modellazione documenti                |
+| [21](labs/21_tinydb_queries_limits.md)           | TinyDB: query, summary table e limiti         |
+| [22](labs/22_tinydb_mongodb_cap_theorem.md)      | TinyDB, MongoDB e CAP theorem                 |
+| [23](labs/23_pipeline_end_to_end.md)             | Pipeline end-to-end: CSV → PySpark → TinyDB   |
+| [24](labs/24_mini_project_design.md)             | Mini-progetto: progettazione e avvio          |
+| [25](labs/25_mini_project_development.md)        | Mini-progetto: sviluppo e completamento       |
+| [26](labs/26_final_exam.md)                      | Verifica finale                               |
+| [27](labs/27_final_review.md)                    | Correzione verifica finale e chiusura corso   |
 
 ## 📝 Solutions
 
