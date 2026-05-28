@@ -58,7 +58,65 @@ Consulta `00_datasets_description.md` per la descrizione completa delle colonne.
    - VS Code lo apre automaticamente come notebook
    - Seleziona il kernel dal virtual environment (in alto a destra)
 
-4. **Crea la SparkSession**: nella prima cella del notebook, copia e esegui (Shift+Enter):
+4. **Configura Java (prima cella)**: su Windows PySpark richiede `JAVA_HOME`. Copia ed esegui questa cella **prima** di importare PySpark:
+
+   ```python
+   import os
+   import platform
+   import subprocess
+   from pathlib import Path
+
+   def setup_java_home():
+       """Imposta JAVA_HOME e aggiunge la cartella bin al PATH per PySpark."""
+       if os.environ.get("JAVA_HOME"):
+           java_bin = Path(os.environ["JAVA_HOME"]) / "bin"
+       elif platform.system() != "Windows":
+           return
+       else:
+           java_home = _find_jdk_on_windows()
+           if not java_home:
+               print(
+                   "JAVA_HOME non trovato. Installa JDK 11+ (es. Eclipse Temurin) "
+                   "oppure imposta JAVA_HOME nelle variabili d'ambiente di Windows."
+               )
+               return
+           os.environ["JAVA_HOME"] = java_home
+           java_bin = Path(java_home) / "bin"
+       bin_path = str(java_bin)
+       path = os.environ.get("PATH", "")
+       if bin_path.casefold() not in path.casefold():
+           os.environ["PATH"] = bin_path + os.pathsep + path
+       print(f"JAVA_HOME = {os.environ['JAVA_HOME']}")
+
+   def _find_jdk_on_windows():
+       try:
+           out = subprocess.check_output(
+               ["where", "java"], text=True, stderr=subprocess.DEVNULL
+           )
+           java_exe = Path(out.strip().splitlines()[0]).resolve()
+           if java_exe.name.lower() == "java.exe" and java_exe.parent.name.lower() == "bin":
+               return str(java_exe.parent.parent)
+       except (subprocess.CalledProcessError, FileNotFoundError, IndexError):
+           pass
+       for root in (
+           Path(r"C:\Program Files\Java"),
+           Path(r"C:\Program Files\Eclipse Adoptium"),
+           Path(r"C:\Program Files\Microsoft"),
+           Path(r"C:\Program Files\Amazon Corretto"),
+       ):
+           if not root.is_dir():
+               continue
+           for folder in sorted(root.iterdir(), reverse=True):
+               if (folder / "bin" / "java.exe").exists():
+                   return str(folder)
+       return None
+
+   setup_java_home()
+   ```
+
+   **Output atteso**: `JAVA_HOME = C:\Program Files\...`
+
+5. **Crea la SparkSession**: in una **seconda** cella, copia e esegui (Shift+Enter):
 
    ```python
    from pyspark.sql import SparkSession
@@ -75,7 +133,7 @@ Consulta `00_datasets_description.md` per la descrizione completa delle colonne.
 
    Se vedi la versione: complimenti, Spark funziona!
 
-5. **Crea un DataFrame da una lista Python**: in una nuova cella:
+6. **Crea un DataFrame da una lista Python**: in una nuova cella:
 
    ```python
    data = [
@@ -104,7 +162,7 @@ Consulta `00_datasets_description.md` per la descrizione completa delle colonne.
    +------+---------------+------------+------+
    ```
 
-6. **Controlla i tipi delle colonne**: in una nuova cella:
+7. **Controlla i tipi delle colonne**: in una nuova cella:
 
    ```python
    df.printSchema()
@@ -122,7 +180,7 @@ Consulta `00_datasets_description.md` per la descrizione completa delle colonne.
 
    `string` = testo, `long` = numero intero, `double` = numero decimale.
 
-7. **Leggi un dataset reale del corso**: i file CSV sono già nella cartella `labs/`. In una nuova cella:
+8. **Leggi un dataset reale del corso**: i file CSV sono già nella cartella `labs/`. In una nuova cella:
 
    ```python
    df_csv = spark.read.csv("superstore_sales.csv", header=True, inferSchema=True)
@@ -132,7 +190,7 @@ Consulta `00_datasets_description.md` per la descrizione completa delle colonne.
 
    **Output atteso**: una tabella con le prime 5 righe del dataset (colonne come `Row ID`, `Order ID`, `Sales`, ecc.) e lo schema con i tipi.
 
-8. **Conta le righe**:
+9. **Conta le righe**:
 
    ```python
    print(f"Numero di righe: {df_csv.count()}")
@@ -140,7 +198,7 @@ Consulta `00_datasets_description.md` per la descrizione completa delle colonne.
 
    **Output atteso**: `Numero di righe: 9800`
 
-9. **Chiudi la SparkSession** (ultima cella):
+10. **Chiudi la SparkSession** (ultima cella):
    ```python
    spark.stop()
    print("SparkSession chiusa!")
@@ -169,7 +227,7 @@ Consulta `00_datasets_description.md` per la descrizione completa delle colonne.
 | `ModuleNotFoundError: No module named 'pyspark'` | Attiva il venv e riesegui `pip install pyspark`            |
 | `FileNotFoundError` quando leggi il CSV          | Il file deve essere nella stessa cartella del notebook     |
 | Spark è lento a partire                          | È normale - il primo avvio può richiedere 10-20 secondi    |
-| `JAVA_HOME is not set`                           | Chiedi al docente - risolviamo insieme in classe           |
+| `JAVA_HOME is not set`                           | Esegui di nuovo la **prima cella** (setup Java) prima di PySpark |
 | Il kernel non vede PySpark                       | Verifica di aver selezionato il kernel dal venv in VS Code |
 
 ## Cleanup obbligatorio
