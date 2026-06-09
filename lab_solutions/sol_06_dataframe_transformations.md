@@ -59,10 +59,16 @@ from pyspark.sql.functions import col, round as spark_round, when, upper
 spark = SparkSession.builder.appName("Lab06_Transformations").master("local[*]").getOrCreate()
 
 # Carica il dataset Superstore Sales
-df = spark.read.csv("superstore_sales.csv", header=True, inferSchema=True)
+# quote/escape necessari: Product Name contiene virgole e virgolette (es. 14 7/8" x 11")
+df = (
+    spark.read
+    .option("quote", '"')
+    .option("escape", '"')
+    .option("multiLine", True)
+    .csv("superstore_sales.csv", header=True, inferSchema=True)
+)
 df.show(5)
-print(f"Righe: {df.count()}, Colonne: {len(df.columns)}")
-```
+print(f"Righe: {df.count()}, Colonne: {len(df.columns)}")```
 
 ## 1. select()
 
