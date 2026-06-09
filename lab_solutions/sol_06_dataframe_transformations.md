@@ -68,7 +68,8 @@ df = (
     .csv("superstore_sales.csv", header=True, inferSchema=True)
 )
 df.show(5)
-print(f"Righe: {df.count()}, Colonne: {len(df.columns)}")```
+print(f"Righe: {df.count()}, Colonne: {len(df.columns)}")
+```
 
 ## 1. select()
 
