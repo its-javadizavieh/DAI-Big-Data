@@ -14,54 +14,6 @@ Poi crea un nuovo file `lab_05_setup.ipynb` in VS Code e seleziona il kernel dal
 
 ## Cella 1: Java (Windows)
 
-```python
-import os
-import platform
-import subprocess
-from pathlib import Path
-
-def setup_java_home():
-    if os.environ.get("JAVA_HOME"):
-        java_bin = Path(os.environ["JAVA_HOME"]) / "bin"
-    elif platform.system() != "Windows":
-        return
-    else:
-        java_home = _find_jdk_on_windows()
-        if not java_home:
-            print("JAVA_HOME non trovato. Installa JDK 11+ o imposta JAVA_HOME.")
-            return
-        os.environ["JAVA_HOME"] = java_home
-        java_bin = Path(java_home) / "bin"
-    bin_path = str(java_bin)
-    path = os.environ.get("PATH", "")
-    if bin_path.casefold() not in path.casefold():
-        os.environ["PATH"] = bin_path + os.pathsep + path
-    print(f"JAVA_HOME = {os.environ['JAVA_HOME']}")
-
-def _find_jdk_on_windows():
-    try:
-        out = subprocess.check_output(["where", "java"], text=True, stderr=subprocess.DEVNULL)
-        java_exe = Path(out.strip().splitlines()[0]).resolve()
-        if java_exe.name.lower() == "java.exe" and java_exe.parent.name.lower() == "bin":
-            return str(java_exe.parent.parent)
-    except (subprocess.CalledProcessError, FileNotFoundError, IndexError):
-        pass
-    for root in (
-        Path(r"C:\Program Files\Java"),
-        Path(r"C:\Program Files\Eclipse Adoptium"),
-        Path(r"C:\Program Files\Microsoft"),
-        Path(r"C:\Program Files\Amazon Corretto"),
-    ):
-        if not root.is_dir():
-            continue
-        for folder in sorted(root.iterdir(), reverse=True):
-            if (folder / "bin" / "java.exe").exists():
-                return str(folder)
-    return None
-
-setup_java_home()
-```
-
 ## Cella 2: SparkSession
 
 ```python
