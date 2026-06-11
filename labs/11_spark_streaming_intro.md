@@ -64,7 +64,7 @@ Questo lab mescola teoria (10 min) e demo pratica (20 min). La demo usa file CSV
    from pyspark.sql import SparkSession
    from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 
-   spark = SparkSession.builder.appName("Lab21_Streaming").getOrCreate()
+   spark = SparkSession.builder.appName("Lab11_Streaming").getOrCreate()
 
    # Definisci lo schema (obbligatorio per streaming)
    schema = StructType([
