@@ -41,23 +41,21 @@ Hands-on laboratory exercises (Italian) covering:
 
 | Lab                                              | Topic                                         |
 | ------------------------------------------------ | --------------------------------------------- |
-| [15](labs/15_nosql_families_sql_comparison.md)   | Famiglie NoSQL e confronto con SQL            |
-| [16](labs/16_tinydb_crud.md)                     | TinyDB: installazione e operazioni CRUD       |
-| [17](labs/17_data_ingestion_pipeline.md)         | Pipeline di ingestion: CSV → PySpark → TinyDB |
-| [18](labs/18_data_cleaning_batch.md)             | Pulizia dati e trasformazioni batch           |
-| [19](labs/19_advanced_aggregations_spark_sql.md) | Aggregazioni avanzate e Spark SQL             |
-| [20](labs/20_tinydb_modeling.md)                 | TinyDB: modellazione documenti                |
-| [21](labs/21_tinydb_queries_limits.md)           | TinyDB: query, summary table e limiti         |
-| [22](labs/22_tinydb_mongodb_cap_theorem.md)      | TinyDB, MongoDB e CAP theorem                 |
-| [23](labs/23_pipeline_end_to_end.md)             | Pipeline end-to-end: CSV → PySpark → TinyDB   |
-| [24](labs/24_mini_project_design.md)             | Mini-progetto: progettazione e avvio          |
-| [25](labs/25_mini_project_development.md)        | Mini-progetto: sviluppo e completamento       |
-| [26](labs/26_final_exam.md)                      | Verifica finale                               |
-| [27](labs/27_final_review.md)                    | Correzione verifica finale e chiusura corso   |
+| [14](labs/14_nosql_families_sql_comparison.md)   | Famiglie NoSQL e confronto con SQL            |
+| [15](labs/15_tinydb_crud.md)                     | TinyDB: installazione e operazioni CRUD       |
+| [16](labs/16_data_ingestion_pipeline.md)         | Pipeline di ingestion: CSV → PySpark → TinyDB |
+| [17](labs/17_data_cleaning_batch.md)             | Pulizia dati e trasformazioni batch           |
+| [18](labs/18_advanced_aggregations_spark_sql.md) | Aggregazioni avanzate e Spark SQL             |
+| [19](labs/19_tinydb_modeling.md)                 | TinyDB: modellazione documenti                |
+| [20](labs/20_tinydb_queries_limits.md)           | TinyDB: query, summary table e limiti         |
+| [21](labs/21_tinydb_mongodb_cap_theorem.md)      | TinyDB, MongoDB e CAP theorem                 |
+| [22](labs/22_pipeline_end_to_end.md)             | Pipeline end-to-end: CSV → PySpark → TinyDB   |
+| [23](labs/23_mini_project.md)                    | Mini-progetto: design, sviluppo e consegna    |
+| [25](labs/25_final_exam_review.md)               | Verifica finale, correzione e chiusura corso  |
 
 ## 📝 Solutions
 
-Solutions are provided for labs 01–13 and 15–25 in the [`lab_solutions/`](lab_solutions/) folder.
+Solutions are provided for labs 01–13 and 14–23 in the [`lab_solutions/`](lab_solutions/) folder.
 
 | Solution                                                | Topic                                            |
 | ------------------------------------------------------- | ------------------------------------------------ |
@@ -74,17 +72,16 @@ Solutions are provided for labs 01–13 and 15–25 in the [`lab_solutions/`](la
 | [11](lab_solutions/sol_11_spark_streaming.md)           | Spark Streaming                                  |
 | [12](lab_solutions/sol_12_exploratory_analysis.md)      | Analisi esplorativa                              |
 | [13](lab_solutions/sol_13_batch_pipeline.md)            | Batch Pipeline                                   |
-| [15](lab_solutions/sol_15_nosql_families.md)            | Famiglie NoSQL                                   |
-| [16](lab_solutions/sol_16_tinydb_crud.md)               | TinyDB CRUD                                      |
-| [17](lab_solutions/sol_17_ingestion_pipeline.md)        | Pipeline di ingestion                            |
-| [18](lab_solutions/sol_18_data_cleaning.md)             | Pulizia dati                                     |
-| [19](lab_solutions/sol_19_advanced_aggregations.md)     | Aggregazioni avanzate                            |
-| [20](lab_solutions/sol_20_tinydb_modeling.md)           | TinyDB: modellazione documenti                   |
-| [21](lab_solutions/sol_21_tinydb_queries_limits.md)     | TinyDB: query e limiti                           |
-| [22](lab_solutions/sol_22_tinydb_mongodb_cap.md)        | TinyDB, MongoDB e CAP theorem                    |
-| [23](lab_solutions/sol_23_pipeline_end_to_end.md)       | Pipeline end-to-end                              |
-| [24](lab_solutions/sol_24_mini_project_design.md)       | Mini-progetto: progettazione                     |
-| [25](lab_solutions/sol_25_mini_project_development.md)  | Mini-progetto: sviluppo                          |
+| [14](lab_solutions/sol_14_nosql_families.md)            | Famiglie NoSQL                                   |
+| [15](lab_solutions/sol_15_tinydb_crud.md)               | TinyDB CRUD                                      |
+| [16](lab_solutions/sol_16_ingestion_pipeline.md)        | Pipeline di ingestion                            |
+| [17](lab_solutions/sol_17_data_cleaning.md)             | Pulizia dati                                     |
+| [18](lab_solutions/sol_18_advanced_aggregations.md)     | Aggregazioni avanzate                            |
+| [19](lab_solutions/sol_19_tinydb_modeling.md)           | TinyDB: modellazione documenti                   |
+| [20](lab_solutions/sol_20_tinydb_queries_limits.md)     | TinyDB: query e limiti                           |
+| [21](lab_solutions/sol_21_tinydb_mongodb_cap.md)        | TinyDB, MongoDB e CAP theorem                    |
+| [22](lab_solutions/sol_22_pipeline_end_to_end.md)       | Pipeline end-to-end                              |
+| [23](lab_solutions/sol_23_mini_project.md)              | Mini-progetto: design, sviluppo e consegna       |
 
 ## 📊 Datasets
 
