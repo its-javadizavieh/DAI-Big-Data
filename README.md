@@ -51,7 +51,6 @@ Hands-on laboratory exercises (Italian) covering:
 | [21](labs/21_tinydb_mongodb_cap_theorem.md)      | TinyDB, MongoDB e CAP theorem                 |
 | [22](labs/22_pipeline_end_to_end.md)             | Pipeline end-to-end: CSV → PySpark → TinyDB   |
 | [23](labs/23_mini_project.md)                    | Mini-progetto: design, sviluppo e consegna    |
-| [25](labs/25_final_exam_review.md)               | Verifica finale, correzione e chiusura corso  |
 
 ## 📝 Solutions
 
@@ -116,4 +115,4 @@ Educational materials for ITS ICT Piemonte.
 
 ---
 
-Last Updated: March 2026
+Last Updated: June 2026
