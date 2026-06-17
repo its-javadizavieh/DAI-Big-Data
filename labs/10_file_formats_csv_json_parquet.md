@@ -11,7 +11,7 @@ Convertire dati tra CSV, JSON e Parquet; confrontare dimensioni e tempi di lettu
 ## Prerequisiti
 
 - Lab 06-09 completati
-- Dataset CSV medio-grande (almeno 100.000 righe, scaricabile da Kaggle)
+- Dataset CSV medio-grande (es. "Global Superstore Sales" da Kaggle)
 
 ## Scenario
 
