@@ -27,7 +27,7 @@ Durante il corso userai **2 dataset** già inclusi nella cartella `labs/`. **Non
 | **Serie A & Coppa Italia** | `serie_a_coppa_italia_2015_2023.csv` | 3.788 partite | Analisi esplorativa, SQL, join   |
 | **Superstore Sales**       | `superstore_sales.csv`               | 9.800 ordini  | Trasformazioni, pipeline, TinyDB |
 
-Consulta `00_datasets_description.md` per la descrizione completa delle colonne.
+Consulta [00_datasets_description.md](https://github.com/its-javadizavieh/DAI-Big-Data/blob/main/labs/00_datasets_description.md) per la descrizione completa delle colonne.
 
 ---
 
