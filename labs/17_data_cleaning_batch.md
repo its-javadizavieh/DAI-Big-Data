@@ -1,4 +1,4 @@
-# Lab 18 - Pulizia dati e trasformazioni batch
+# Lab 17 - Pulizia dati e trasformazioni batch
 
 ## Obiettivo
 
@@ -29,7 +29,7 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
    from pyspark.sql import SparkSession
    from pyspark.sql.functions import col, count, when, isnan, trim, to_date
 
-   spark = SparkSession.builder.appName("Lab16_Cleaning").getOrCreate()
+   spark = SparkSession.builder.appName("Lab17Cleaning").getOrCreate()
 
    raw_df = spark.read.csv("serie_a_coppa_italia_2015_2023.csv",
                            header=True, inferSchema=True)

@@ -1,4 +1,4 @@
-# Lab 19 - Aggregazioni avanzate e Spark SQL
+# Lab 18 - Aggregazioni avanzate e Spark SQL
 
 ## Obiettivo
 
@@ -31,7 +31,7 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
    from pyspark.sql.window import Window
    from pyspark.sql.functions import dense_rank, lag, round as spark_round
 
-   spark = SparkSession.builder.appName("Lab17_Advanced").getOrCreate()
+   spark = SparkSession.builder.appName("Lab18Advanced").getOrCreate()
 
    df = spark.read.csv("superstore_sales.csv", header=True, inferSchema=True)
    ```

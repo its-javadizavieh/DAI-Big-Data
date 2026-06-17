@@ -1,4 +1,4 @@
-# Lab 21 - TinyDB: query utili, tabelle di riepilogo, e limiti pratici
+# Lab 20 - TinyDB: query utili, tabelle di riepilogo, e limiti pratici
 
 ## Obiettivo
 
@@ -10,8 +10,8 @@ Usare TinyDB in modo più intelligente: cercare con condizioni combinate, aggior
 
 ## Prerequisiti
 
-- Lab 17 completato
-- Lab 20 completato
+- Lab 16 completato
+- Lab 19 completato
 
 ## Step
 

@@ -1,4 +1,4 @@
-# Lab 20 - TinyDB: modellazione documenti e query semplici
+# Lab 19 - TinyDB: modellazione documenti e query semplici
 
 ## Obiettivo
 
@@ -10,7 +10,7 @@ Caricare una versione semplice del dataset Serie A in TinyDB, confrontare docume
 
 ## Prerequisiti
 
-- Lab 16 completato
+- Lab 15 completato
 - Dataset `serie_a_coppa_italia_2015_2023.csv`
 
 ## Step

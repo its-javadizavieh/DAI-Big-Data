@@ -1,4 +1,4 @@
-# Lab 16 - TinyDB: setup e operazioni CRUD
+# Lab 15 - TinyDB: setup e operazioni CRUD
 
 ## Obiettivo
 
@@ -11,7 +11,7 @@ Installare TinyDB e praticare le operazioni CRUD (Create, Read, Update, Delete) 
 ## Prerequisiti
 
 - Python attivo nel virtual environment
-- Lezione 16 letta
+- Lezione 15 letta
 
 ## Step
 

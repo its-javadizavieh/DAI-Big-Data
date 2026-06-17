@@ -1,4 +1,4 @@
-# Lab 23 - Pipeline end-to-end: CSV -> PySpark -> TinyDB
+# Lab 22 - Pipeline end-to-end: CSV -> PySpark -> TinyDB
 
 ## Obiettivo
 
@@ -10,8 +10,8 @@ Costruire una pipeline completa che carica un CSV, lo pulisce, lo analizza con S
 
 ## Prerequisiti
 
-- Lab 17 completato
-- Lab 19 completato
+- Lab 16 completato
+- Lab 18 completato
 - TinyDB installato
 
 ## Dataset
@@ -26,7 +26,7 @@ Costruire una pipeline completa che carica un CSV, lo pulisce, lo analizza con S
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, to_date, year
 
-spark = SparkSession.builder.appName("Lab23_Pipeline").getOrCreate()
+spark = SparkSession.builder.appName("Lab22Pipeline").getOrCreate()
 raw = spark.read.csv("superstore_sales.csv", header=True, inferSchema=True)
 print(f"Righe caricate: {raw.count()}")
 ```

@@ -1,4 +1,4 @@
-# Lab 15 - Famiglie NoSQL, confronto con SQL, e introduzione a TinyDB
+# Lab 14 - Famiglie NoSQL, confronto con SQL, e introduzione a TinyDB
 
 ## Obiettivo
 
@@ -10,7 +10,7 @@ Capire le 4 famiglie NoSQL e spiegare perché in questo corso useremo **TinyDB**
 
 ## Prerequisiti
 
-- Lezione 15 letta
+- Lezione 14 letta
 - Conoscenze base di Python
 
 ## Step

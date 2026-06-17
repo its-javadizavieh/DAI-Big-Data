@@ -1,4 +1,4 @@
-# Lab 17 - Pipeline di ingestion: CSV -> PySpark -> TinyDB
+# Lab 16 - Pipeline di ingestion: CSV -> PySpark -> TinyDB
 
 ## Obiettivo
 
@@ -11,7 +11,7 @@ Costruire una pipeline ETL semplice: caricare il CSV Superstore con PySpark, pul
 ## Prerequisiti
 
 - Lab 10 completato
-- Lab 16 completato
+- Lab 15 completato
 - `pip install tinydb`
 
 ## Dataset
@@ -25,7 +25,7 @@ Costruire una pipeline ETL semplice: caricare il CSV Superstore con PySpark, pul
 ```python
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName("Lab17_TinyDB").getOrCreate()
+spark = SparkSession.builder.appName("Lab16TinyDB").getOrCreate()
 df = spark.read.csv("superstore_sales.csv", header=True, inferSchema=True)
 
 print(f"Righe caricate: {df.count()}")

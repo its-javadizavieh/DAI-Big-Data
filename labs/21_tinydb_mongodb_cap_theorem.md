@@ -1,4 +1,4 @@
-# Lab 22 - TinyDB vs MongoDB e introduzione al CAP theorem
+# Lab 21 - TinyDB vs MongoDB e introduzione al CAP theorem
 
 ## Obiettivo
 
@@ -10,7 +10,7 @@ Capire i limiti di TinyDB, riconoscere quando MongoDB sarebbe più adatto, e spi
 
 ## Prerequisiti
 
-- Lezione 22 letta
+- Lezione 21 letta
 
 ## Nota
 
