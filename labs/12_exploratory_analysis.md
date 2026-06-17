@@ -1,8 +1,8 @@
-# Lab 12 - Analisi esplorativa: Serie A e Coppa Italia
+# Lab 12 - Analisi esplorativa: dataset del corso (Serie A e Coppa Italia)
 
 ## Obiettivo
 
-Condurre un'analisi esplorativa (EDA) completa sul dataset di calcio italiano, rispondendo a domande di business con PySpark.
+Condurre un'analisi esplorativa (EDA) completa sul dataset del corso, rispondendo a domande di business con PySpark.
 
 ## Durata
 
@@ -31,7 +31,7 @@ Condurre un'analisi esplorativa (EDA) completa sul dataset di calcio italiano, r
        col, count, sum, avg, max, min, when, round as spark_round, desc
    )
 
-   spark = SparkSession.builder.appName("Lab23_EDA").getOrCreate()
+   spark = SparkSession.builder.appName("Lab12EDA").getOrCreate()
 
    df = spark.read.csv("serie_a_coppa_italia_2015_2023.csv",
                        header=True, inferSchema=True)
