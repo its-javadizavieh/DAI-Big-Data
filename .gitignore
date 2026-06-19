@@ -1,15 +1,24 @@
 # Ignore everything
+# Ignore everything
 *
 
-# Allow README
-!README.md
-
-# Allow .gitignore itself
+# Except these
 !.gitignore
-
-# Allow labs folder and its contents
+!README.md
 !labs/
 !labs/**
+
+# Never publish these lab files
+/labs/14_nosql_families_sql_comparison.md
+/labs/15_tinydb_crud.md
+/labs/16_data_ingestion_pipeline.md
+/labs/17_data_cleaning_batch.md
+/labs/18_advanced_aggregations_spark_sql.md
+/labs/19_tinydb_modeling.md
+/labs/20_tinydb_queries_limits.md
+/labs/21_tinydb_mongodb_cap_theorem.md
+/labs/22_pipeline_end_to_end.md
+/labs/23_mini_project.md
 
 # Allow lab_solutions folder (but not all files)
 !lab_solutions/
