@@ -6,7 +6,7 @@ Caricare una versione semplice del dataset Serie A in TinyDB, confrontare docume
 
 ## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
@@ -15,7 +15,7 @@ Caricare una versione semplice del dataset Serie A in TinyDB, confrontare docume
 
 ## Step
 
-### Fase 1: Crea documenti flat (10 minuti)
+### Fase 1: Crea documenti flat
 
 Carica le prime 200 righe del CSV e crea documenti flat (senza nesting) con questi campi:
 `match_id`, `competition`, `season`, `home`, `away`, `home_goals`, `away_goals`, `city`
@@ -48,7 +48,7 @@ flat_table.truncate()
 
 **Suggerimento**: usa `int(row["HomeGoals"]) if row["HomeGoals"] else 0` per gestire i campi vuoti.
 
-### Fase 2: Query semplici (8 minuti)
+### Fase 2: Query semplici
 
 Scrivi le query per:
 
@@ -70,7 +70,7 @@ Match = Query()
 
 **Suggerimento**: usa `flat_table.search(Match.campo == "valore")[:3]`.
 
-### Fase 3: Crea una versione nested (7 minuti)
+### Fase 3: Crea una versione nested
 
 Usando i primi 20 documenti flat, crea una versione nested dove:
 
@@ -96,7 +96,7 @@ nested_table.insert_multiple(nested_docs)
 print(nested_table.all()[:2])
 ```
 
-### Fase 4: Riflessione (5 minuti)
+### Fase 4: Riflessione
 
 Scrivi 4-5 righe:
 

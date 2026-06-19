@@ -6,7 +6,7 @@ Costruire una pipeline ETL semplice: caricare il CSV Superstore con PySpark, pul
 
 ## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
@@ -20,7 +20,7 @@ Costruire una pipeline ETL semplice: caricare il CSV Superstore con PySpark, pul
 
 ## Step
 
-### Fase 1: Extract (5 minuti)
+### Fase 1: Extract
 
 ```python
 from pyspark.sql import SparkSession
@@ -32,7 +32,7 @@ print(f"Righe caricate: {df.count()}")
 df.printSchema()
 ```
 
-### Fase 2: Validate (5 minuti)
+### Fase 2: Validate
 
 Controlla quanti null ci sono per ogni colonna.
 
@@ -47,7 +47,7 @@ null_counts = df.select([
 null_counts.show()
 ```
 
-### Fase 3: Clean (8 minuti)
+### Fase 3: Clean
 
 Pulisci il DataFrame applicando queste operazioni in sequenza:
 
@@ -67,7 +67,7 @@ clean_df = (
 
 **Suggerimento**: usa `dropDuplicates()`, `dropna(subset=[...])`, `withColumn` + `to_date`, `year()`, `month()`.
 
-### Fase 4: Load (8 minuti)
+### Fase 4: Load
 
 Seleziona le colonne da salvare in TinyDB e salva i documenti.
 
@@ -95,7 +95,7 @@ to_store = clean_df.select(
 # Scrivi qui il tuo codice
 ```
 
-### Fase 5: Verifica (4 minuti)
+### Fase 5: Verifica
 
 Verifica che il numero di righe Spark sia uguale al numero di documenti TinyDB.
 

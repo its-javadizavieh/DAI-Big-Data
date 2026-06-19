@@ -6,7 +6,7 @@ Costruire una pipeline completa che carica un CSV, lo pulisce, lo analizza con S
 
 ## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
@@ -20,7 +20,7 @@ Costruire una pipeline completa che carica un CSV, lo pulisce, lo analizza con S
 
 ## Step
 
-### Fase 1: Ingestione (5 minuti)
+### Fase 1: Ingestione
 
 ```python
 from pyspark.sql import SparkSession
@@ -31,7 +31,7 @@ raw = spark.read.csv("superstore_sales.csv", header=True, inferSchema=True)
 print(f"Righe caricate: {raw.count()}")
 ```
 
-### Fase 2: Pulizia (5 minuti)
+### Fase 2: Pulizia
 
 Pulisci il DataFrame:
 
@@ -49,7 +49,7 @@ clean = (
 
 **Suggerimento**: usa `dropDuplicates()`, `dropna(subset=[...])`, `withColumn` + `to_date`, `year()`.
 
-### Fase 3: Analisi con Spark SQL (10 minuti)
+### Fase 3: Analisi con Spark SQL
 
 ```python
 clean.createOrReplaceTempView("orders")
@@ -86,7 +86,7 @@ q2 = spark.sql("""
 q2.show()
 ```
 
-### Fase 4: Salva i risultati (5 minuti)
+### Fase 4: Salva i risultati
 
 Salva i risultati delle due query in TinyDB, in due tabelle separate: `sales_by_region` e `top_customers`.
 
@@ -103,7 +103,7 @@ db = TinyDB("pipeline_results.json")
 # Scrivi qui il tuo codice
 ```
 
-### Fase 5: Verifica (5 minuti)
+### Fase 5: Verifica
 
 Verifica che i conteggi Spark e TinyDB corrispondano.
 

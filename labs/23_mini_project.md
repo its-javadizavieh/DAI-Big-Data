@@ -6,7 +6,7 @@ Progettare e completare un mini-progetto end-to-end su uno dei dataset del corso
 
 ## Durata
 
-60 minuti
+2 ore
 
 ## Prerequisiti
 
@@ -15,7 +15,7 @@ Progettare e completare un mini-progetto end-to-end su uno dei dataset del corso
 
 ## Step
 
-### Fase 1: Scegli dataset e tema (10 minuti)
+### Fase 1: Scegli dataset e tema
 
 Scrivi:
 
@@ -48,7 +48,7 @@ Compila il template:
 5. Presentazione risultati
 ```
 
-### Fase 2: Ingest e pulizia (15 minuti)
+### Fase 2: Ingest e pulizia
 
 ```python
 from pyspark.sql import SparkSession
@@ -63,7 +63,7 @@ clean = df.dropDuplicates().dropna()
 print(f"Righe pulite: {clean.count()}")
 ```
 
-### Fase 3: Completa le query (15 minuti)
+### Fase 3: Completa le query
 
 Scrivi almeno 2 query Spark SQL che rispondano alle tue domande principali.
 
@@ -83,7 +83,7 @@ FROM project_data
 """)
 ```
 
-### Fase 4: Salva i risultati (10 minuti)
+### Fase 4: Salva i risultati
 
 ```python
 # 1. Salva q1 e q2 in Parquet (mode="overwrite")
@@ -98,7 +98,7 @@ FROM project_data
 # Scrivi qui il tuo codice
 ```
 
-### Fase 5: Verifica e riepilogo (10 minuti)
+### Fase 5: Verifica e riepilogo
 
 Stampa il conteggio documenti e i primi 3 risultati per ogni tabella TinyDB.
 

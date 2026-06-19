@@ -6,7 +6,7 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
 
 ## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
@@ -21,7 +21,7 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
 
 ## Step
 
-### Fase 1: Carica e ispeziona (5 minuti)
+### Fase 1: Carica e ispeziona
 
 1. **Carica il CSV e seleziona le colonne principali:**
 
@@ -51,7 +51,7 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
    df.show(5)
    ```
 
-### Fase 2: Conta i null (5 minuti)
+### Fase 2: Conta i null
 
 3. **Conta i null per ogni colonna:**
 
@@ -66,7 +66,7 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
 
    Annota quali colonne hanno più null.
 
-### Fase 3: Gestisci i null (7 minuti)
+### Fase 3: Gestisci i null
 
 4. **Colonne critiche - rimuovi righe senza ID o squadre:**
 
@@ -98,7 +98,7 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
    print(f"Dopo fillna testo: {step3.count()} righe")
    ```
 
-### Fase 4: Rimuovi duplicati (3 minuti)
+### Fase 4: Rimuovi duplicati
 
 7. **Controlla e rimuovi duplicati:**
 
@@ -111,7 +111,7 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
    print(f"Duplicati rimossi: {before - after}")
    ```
 
-### Fase 5: Trova anomalie (5 minuti)
+### Fase 5: Trova anomalie
 
 8. **Controlla valori anomali nei gol (nessuna partita ha >10 gol):**
 
@@ -137,7 +137,7 @@ Pulire un dataset reale (partite di Serie A) gestendo null, duplicati, tipi erra
    print(f"Righe con possesso anomalo: {poss_anomalie.count()}")
    ```
 
-### Fase 6: Log finale (5 minuti)
+### Fase 6: Log finale
 
 10. **Stampa il riepilogo della pulizia:**
 

@@ -6,7 +6,7 @@ Installare TinyDB e praticare le operazioni CRUD (Create, Read, Update, Delete) 
 
 ## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
@@ -15,7 +15,7 @@ Installare TinyDB e praticare le operazioni CRUD (Create, Read, Update, Delete) 
 
 ## Step
 
-### Fase 1: Installazione (5 minuti)
+### Fase 1: Installazione
 
 1. Installa TinyDB:
 
@@ -25,7 +25,7 @@ pip install tinydb
 
 2. Crea un nuovo file Python o notebook.
 
-### Fase 2: Crea il database e inserisci dati (10 minuti)
+### Fase 2: Crea il database e inserisci dati
 
 ```python
 from tinydb import TinyDB, Query
@@ -46,7 +46,7 @@ data = [
 # Scrivi qui il tuo codice per inserire i dati
 ```
 
-### Fase 3: Read (7 minuti)
+### Fase 3: Read
 
 ```python
 Match = Query()
@@ -62,7 +62,7 @@ Match = Query()
 
 **Suggerimento**: usa `partite.all()`, `partite.search(Match.campo == valore)`, `partite.get()`.
 
-### Fase 4: Update e Delete (8 minuti)
+### Fase 4: Update e Delete
 
 ```python
 # Scrivi il codice per:

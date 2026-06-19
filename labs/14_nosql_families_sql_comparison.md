@@ -6,7 +6,7 @@ Capire le 4 famiglie NoSQL e spiegare perché in questo corso useremo **TinyDB**
 
 ## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
@@ -15,7 +15,7 @@ Capire le 4 famiglie NoSQL e spiegare perché in questo corso useremo **TinyDB**
 
 ## Step
 
-### Fase 1: Classifica gli scenari (10 minuti)
+### Fase 1: Classifica gli scenari
 
 Per ogni scenario, scegli la famiglia NoSQL più adatta:
 
@@ -26,7 +26,7 @@ Per ogni scenario, scegli la famiglia NoSQL più adatta:
 
 Scrivi le risposte nel tuo notebook o in un file Markdown.
 
-### Fase 2: Confronto SQL vs documenti (10 minuti)
+### Fase 2: Confronto SQL vs documenti
 
 Considera questo scenario:
 
@@ -39,7 +39,7 @@ Scrivi in 4-6 righe:
 - come modelleresti i dati in un database documentale
 - perché per questo scenario un documento è più semplice
 
-### Fase 3: Perché TinyDB? (10 minuti)
+### Fase 3: Perché TinyDB?
 
 Rispondi a queste domande:
 

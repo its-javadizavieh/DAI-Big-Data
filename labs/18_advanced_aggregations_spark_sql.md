@@ -6,7 +6,7 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
 
 ## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
@@ -21,7 +21,7 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
 
 ## Step
 
-### Fase 1: Carica e prepara (5 minuti)
+### Fase 1: Carica e prepara
 
 1. **Carica il dataset:**
 
@@ -49,7 +49,7 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
    df.show(5)
    ```
 
-### Fase 2: Top-N per gruppo con DENSE_RANK (8 minuti)
+### Fase 2: Top-N per gruppo con DENSE_RANK
 
 3. **Trova le top 3 sotto-categorie per vendite in ogni categoria:**
 
@@ -80,7 +80,7 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
 
    **Suggerimento**: `PARTITION BY Category` e `ORDER BY SUM(Sales) DESC`.
 
-### Fase 3: Andamento mese su mese con LAG (8 minuti)
+### Fase 3: Andamento mese su mese con LAG
 
 4. **Calcola vendite mensili per regione:**
 
@@ -119,7 +119,7 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
 
    **Suggerimento**: `lag("monthly_sales", 1)` prende il valore precedente. La differenza e' `monthly_sales - prev_month_sales`.
 
-### Fase 4: Running total (5 minuti)
+### Fase 4: Running total
 
 6. **Calcola il totale cumulativo delle vendite per regione:**
 
@@ -141,7 +141,7 @@ Usare Spark SQL e window function per analisi avanzate sul dataset Superstore: r
 
    **Suggerimento**: `spark_round(sum("monthly_sales").over(w_cum), 2)`.
 
-### Fase 5: ROLLUP - Subtotali (4 minuti)
+### Fase 5: ROLLUP - Subtotali
 
 7. **Crea subtotali per regione e stato:**
 

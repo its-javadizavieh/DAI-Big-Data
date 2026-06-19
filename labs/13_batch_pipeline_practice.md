@@ -6,7 +6,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
 
 ## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
@@ -17,7 +17,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
 
 ## Step
 
-### Fase 1: Ingestione (5 minuti)
+### Fase 1: Ingestione
 
 1. **Crea un nuovo notebook** `lab_13_pipeline.ipynb`
 
@@ -56,7 +56,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
    null_counts.show()
    ```
 
-### Fase 2: Pulizia (5 minuti)
+### Fase 2: Pulizia
 
 4. **Seleziona le colonne utili e pulisci:**
 
@@ -98,7 +98,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
 
    **Suggerimento**: usa `withColumn` + `to_date`, `dropna(subset=[...])`, `dropDuplicates()`.
 
-### Fase 3: Trasformazione (5 minuti)
+### Fase 3: Trasformazione
 
 5. **Aggiungi colonne derivate:**
 
@@ -131,7 +131,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
 
    **Suggerimento**: usa `withColumn`, `when().when().otherwise()`, `year()`, `month()`.
 
-### Fase 4: Analisi con Spark SQL (10 minuti)
+### Fase 4: Analisi con Spark SQL
 
 6. **Registra una vista temporanea e scrivi 3 query:**
 
@@ -177,7 +177,7 @@ Costruire una pipeline batch completa sul tuo dataset: caricamento, pulizia, tra
 
    **Query 3 - HAVING o Window Function:** scrivi una query avanzata con HAVING o RANK().
 
-### Fase 5: Salvataggio in Parquet (5 minuti)
+### Fase 5: Salvataggio in Parquet
 
 7. **Salva i risultati in Parquet:**
 

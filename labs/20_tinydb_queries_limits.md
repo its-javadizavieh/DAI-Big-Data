@@ -6,7 +6,7 @@ Usare TinyDB in modo più intelligente: cercare con condizioni combinate, aggior
 
 ## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
@@ -15,7 +15,7 @@ Usare TinyDB in modo più intelligente: cercare con condizioni combinate, aggior
 
 ## Step
 
-### Fase 1: Apri il database Superstore (5 minuti)
+### Fase 1: Apri il database Superstore
 
 ```python
 from tinydb import TinyDB, Query
@@ -27,7 +27,7 @@ Order = Query()
 print(f"Documenti disponibili: {len(orders)}")
 ```
 
-### Fase 2: Query combinate (10 minuti)
+### Fase 2: Query combinate
 
 Scrivi query con condizioni multiple usando `&` (AND):
 
@@ -44,7 +44,7 @@ Scrivi query con condizioni multiple usando `&` (AND):
 
 **Suggerimento**: usa `orders.search((Order.region == "West") & (Order.category == "Technology"))`.
 
-### Fase 3: Aggiungi una label (5 minuti)
+### Fase 3: Aggiungi una label
 
 Aggiungi il campo `"high_value": True` a tutti i documenti con `sales > 500`, poi verifica cercando i documenti con `high_value == True`.
 
@@ -57,7 +57,7 @@ Aggiungi il campo `"high_value": True` a tutti i documenti con `sales > 500`, po
 
 **Suggerimento**: usa `orders.update({"high_value": True}, Order.sales > 500)`.
 
-### Fase 4: Crea una tabella summary (10 minuti)
+### Fase 4: Crea una tabella summary
 
 Crea una tabella `sales_by_region` con un documento per ogni regione contenente: `region`, `num_orders`, `total_sales`.
 

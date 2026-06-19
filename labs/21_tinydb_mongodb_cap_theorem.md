@@ -6,7 +6,7 @@ Capire i limiti di TinyDB, riconoscere quando MongoDB sarebbe più adatto, e spi
 
 ## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
@@ -18,7 +18,7 @@ Questo è un lab teorico/progettuale. Non serve codice obbligatorio.
 
 ## Step
 
-### Fase 1: TinyDB o MongoDB? (10 minuti)
+### Fase 1: TinyDB o MongoDB?
 
 Per ogni scenario, scegli lo strumento più adatto e spiega il perché in 2 righe:
 
@@ -27,7 +27,7 @@ Per ogni scenario, scegli lo strumento più adatto e spiega il perché in 2 righ
 3. Un progetto didattico per studenti principianti
 4. Un sistema di produzione con più servizi che scrivono dati
 
-### Fase 2: CAP theorem in parole semplici (10 minuti)
+### Fase 2: CAP theorem in parole semplici
 
 Rispondi:
 
@@ -35,7 +35,7 @@ Rispondi:
 2. Perché il CAP theorem riguarda i sistemi distribuiti?
 3. Perché TinyDB non ha davvero questo problema nella pratica del corso?
 
-### Fase 3: Riflessione finale (10 minuti)
+### Fase 3: Riflessione finale
 
 Scrivi 5-6 righe:
 
