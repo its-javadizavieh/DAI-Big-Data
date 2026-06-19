@@ -4,9 +4,9 @@
 
 Usare select, filter, withColumn, drop e orderBy per trasformare il dataset Superstore Sales. Imparare a concatenare le operazioni.
 
-## Durata (timebox)
+## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 

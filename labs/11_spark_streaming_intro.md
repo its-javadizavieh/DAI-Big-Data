@@ -6,22 +6,18 @@ Comprendere la differenza tra batch e streaming, e lanciare una demo di Structur
 
 ## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
 - Lab 05-10 completati (PySpark DataFrame e Spark SQL)
 - PySpark installato
 
-## Nota
-
-Questo lab mescola teoria (10 min) e demo pratica (20 min). La demo usa file CSV che copierete manualmente in una cartella per simulare dati "in arrivo".
-
 ---
 
 ## Step
 
-### Fase 1: Teoria - Batch vs Streaming (10 minuti)
+### Fase 1: Teoria - Batch vs Streaming
 
 1. **Completa questa tabella:**
 
@@ -36,7 +32,7 @@ Questo lab mescola teoria (10 min) e demo pratica (20 min). La demo usa file CSV
    - Cos'è un micro-batch? Come funziona in Spark Structured Streaming?
    - Perché Spark usa il micro-batch invece di processare evento per evento?
 
-### Fase 2: Prepara la demo (5 minuti)
+### Fase 2: Prepara la demo
 
 3. **Crea due cartelle nella tua directory di lavoro:**
 
@@ -56,7 +52,7 @@ Questo lab mescola teoria (10 min) e demo pratica (20 min). La demo usa file CSV
    Inter,3,Serie A
    ```
 
-### Fase 3: Lancia lo stream (10 minuti)
+### Fase 3: Lancia lo stream
 
 5. **Crea un notebook con questo codice:**
 
@@ -98,7 +94,7 @@ Questo lab mescola teoria (10 min) e demo pratica (20 min). La demo usa file CSV
 
    Dovresti vedere il batch_01.csv processato nella console.
 
-### Fase 4: Simula nuovi dati (5 minuti)
+### Fase 4: Simula nuovi dati
 
 8. **SENZA fermare il notebook**, crea un nuovo file:
 

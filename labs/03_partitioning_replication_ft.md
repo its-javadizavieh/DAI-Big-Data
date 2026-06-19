@@ -4,9 +4,9 @@
 
 Scegliere come dividere i dati, capire perché fare copie, e simulare cosa succede quando un computer si rompe.
 
-## Durata (timebox)
+## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 

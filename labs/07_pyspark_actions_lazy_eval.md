@@ -4,9 +4,9 @@
 
 Comprendere la differenza tra trasformazioni e azioni, visualizzare il piano di esecuzione e sperimentare il caching.
 
-## Durata (timebox)
+## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 

@@ -6,7 +6,7 @@ Condurre un'analisi esplorativa (EDA) completa sul dataset del corso, rispondend
 
 ## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
@@ -21,7 +21,7 @@ Condurre un'analisi esplorativa (EDA) completa sul dataset del corso, rispondend
 
 ## Step
 
-### Fase 1: Carica e conosci i dati (5 minuti)
+### Fase 1: Carica e conosci i dati
 
 1. **Carica il dataset:**
 
@@ -57,7 +57,7 @@ Condurre un'analisi esplorativa (EDA) completa sul dataset del corso, rispondend
    df.groupBy("Competition_Name").count().show()
    ```
 
-### Fase 2: Gol e vittorie (8 minuti)
+### Fase 2: Gol e vittorie
 
 4. **Media gol per stagione:**
 
@@ -104,7 +104,7 @@ Condurre un'analisi esplorativa (EDA) completa sul dataset del corso, rispondend
    vittorie_casa.show()
    ```
 
-### Fase 3: Analisi disciplinare (7 minuti)
+### Fase 3: Analisi disciplinare
 
 6. **Squadre più indisciplinate (cartellini gialli + rossi):**
 
@@ -149,7 +149,7 @@ Condurre un'analisi esplorativa (EDA) completa sul dataset del corso, rispondend
    arbitri.show()
    ```
 
-### Fase 4: Fattore campo e statistiche (10 minuti)
+### Fase 4: Fattore campo e statistiche
 
 8. **Fattore campo: vittorie casa vs trasferta vs pareggi:**
 

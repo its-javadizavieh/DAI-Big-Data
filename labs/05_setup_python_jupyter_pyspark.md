@@ -4,9 +4,9 @@
 
 Installare l'ambiente di lavoro, creare una SparkSession funzionante, creare il primo DataFrame, e leggere un file CSV.
 
-## Durata (timebox)
+## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 

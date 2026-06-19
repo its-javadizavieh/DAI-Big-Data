@@ -4,9 +4,9 @@
 
 Capire come funziona un cluster disegnando un diagramma boss-helper e simulando la distribuzione dei dati.
 
-## Durata (timebox)
+## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 

@@ -4,9 +4,9 @@
 
 Applicare il framework delle 5V a scenari della vita quotidiana e costruire un diagramma semplice del ciclo di vita dei dati.
 
-## Durata (timebox)
+## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 

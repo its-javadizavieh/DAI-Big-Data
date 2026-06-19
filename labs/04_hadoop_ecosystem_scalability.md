@@ -4,9 +4,9 @@
 
 Costruire una mini-timeline dei Big Data, confrontare Hadoop e Spark, e completare un quiz di autovalutazione.
 
-## Durata (timebox)
+## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 

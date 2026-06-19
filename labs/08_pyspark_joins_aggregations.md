@@ -4,9 +4,9 @@
 
 Eseguire aggregazioni con groupBy/agg, creare pivot table, e fare join tra DataFrames su un dataset di vendite.
 
-## Durata (timebox)
+## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 

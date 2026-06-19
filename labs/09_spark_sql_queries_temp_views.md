@@ -4,9 +4,9 @@
 
 Eseguire query SQL su DataFrame PySpark usando viste temporanee, subquery e CTE.
 
-## Durata (timebox)
+## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 

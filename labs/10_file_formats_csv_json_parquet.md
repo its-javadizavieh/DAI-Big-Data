@@ -4,9 +4,9 @@
 
 Convertire dati tra CSV, JSON e Parquet; confrontare dimensioni e tempi di lettura; usare partitionBy.
 
-## Durata (timebox)
+## Durata
 
-30 minuti
+2 ore
 
 ## Prerequisiti
 
