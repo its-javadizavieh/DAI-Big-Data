@@ -9,7 +9,6 @@
 !labs/**
 
 # Never publish these lab files
-/labs/14_nosql_families_sql_comparison.md
 /labs/15_tinydb_crud.md
 /labs/16_data_ingestion_pipeline.md
 /labs/17_data_cleaning_batch.md
