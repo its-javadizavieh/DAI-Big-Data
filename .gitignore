@@ -9,7 +9,6 @@
 !labs/**
 
 # Never publish these lab files
-/labs/17_data_cleaning_batch.md
 /labs/18_advanced_aggregations_spark_sql.md
 /labs/19_tinydb_modeling.md
 /labs/20_tinydb_queries_limits.md
