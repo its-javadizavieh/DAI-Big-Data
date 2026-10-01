@@ -9,7 +9,6 @@
 !labs/**
 
 # Never publish these lab files
-/labs/18_advanced_aggregations_spark_sql.md
 /labs/19_tinydb_modeling.md
 /labs/20_tinydb_queries_limits.md
 /labs/21_tinydb_mongodb_cap_theorem.md
