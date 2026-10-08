@@ -24,7 +24,7 @@ Carica le prime 200 righe del CSV e crea documenti flat (senza nesting) con ques
 import csv
 from tinydb import TinyDB
 
-with open("serie_a_coppa_italia_2015_2023.csv", "r", encoding="utf-8") as f:
+with open("serie_a_coppa_italia_2015_2023.csv", "r", encoding="utf-8-sig") as f:
     reader = csv.DictReader(f)
     rows = []
     for row in reader:
