@@ -9,7 +9,6 @@
 !labs/**
 
 # Never publish these lab files
-/labs/21_tinydb_mongodb_cap_theorem.md
 /labs/22_pipeline_end_to_end.md
 /labs/23_mini_project.md
 
