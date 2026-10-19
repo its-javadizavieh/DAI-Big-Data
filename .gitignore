@@ -9,7 +9,6 @@
 !labs/**
 
 # Never publish these lab files
-/labs/23_mini_project.md
 
 # Allow lab_solutions folder (but not all files)
 !lab_solutions/
